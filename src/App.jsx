@@ -1,13 +1,14 @@
+import { Route, Routes } from "react-router-dom";
+import Nav from "./component/Nav/Nav.jsx";
+import About from "./component/About/About.jsx";
+
 export default function App() {
   return (
     <div>
-      <h1>Green thumb Shop Whoop Whoop</h1>
-      <h2>welcome </h2>
-
-      <h1>HI latifah is here</h1>
-
-      <h3>test</h3>
-
+      <Routes>
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <Nav />
     </div>
   );
 }
