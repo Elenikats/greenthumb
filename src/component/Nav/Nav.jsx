@@ -10,27 +10,38 @@ export default function App() {
     // <h2>this is the nav</h2>
     <Navbar collapseOnSelect expand="xs">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Brand href="#home">
-        <img src={Logo} alt="" />
-      </Navbar.Brand>
+      <LinkContainer to="/">
+        <Navbar.Brand>
+          <img src={Logo} alt="" />
+        </Navbar.Brand>
+      </LinkContainer>
       <Nav>
-        <LinkContainer to="/about">
+        <LinkContainer to="/login">
           <NavLink>
             <FontAwesomeIcon icon={faUser} />
           </NavLink>
         </LinkContainer>
-        <NavLink>
-          <FontAwesomeIcon icon={faShoppingBasket} />
-        </NavLink>
+        <LinkContainer to="/cart">
+          <NavLink>
+            <FontAwesomeIcon icon={faShoppingBasket} />
+          </NavLink>
+        </LinkContainer>
       </Nav>
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          {/* <Nav.Link as={Link} to={"/about"}>
-            About us
-          </Nav.Link> */}
-          <Nav.Link href="#plants">Plants</Nav.Link>
-          <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+          <LinkContainer to="/about">
+            <Nav.Link>About us</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to="/products">
+            <Nav.Link>Plants</Nav.Link>
+          </LinkContainer>
+
+          <LinkContainer to="/plantdoctor">
+            <Nav.Link>Plant-doctor</Nav.Link>
+          </LinkContainer>
+
+          {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
               Another action
@@ -40,13 +51,7 @@ export default function App() {
             <NavDropdown.Item href="#action/3.4">
               Separated link
             </NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-        <Nav>
-          <Nav.Link href="#deets">More deets</Nav.Link>
-          <Nav.Link eventKey={2} href="#memes">
-            Dank memes
-          </Nav.Link>
+          </NavDropdown> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

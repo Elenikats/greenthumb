@@ -1,1 +1,1 @@
-export const plantfolder = "/plant-photos/plants/"
+export const plantFolder = "/plant-photos/plants/"
