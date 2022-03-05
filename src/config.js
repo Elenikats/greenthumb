@@ -1,0 +1,1 @@
+export const plantfolder = "/plant-photos/plants/"
