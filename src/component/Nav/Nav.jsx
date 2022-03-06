@@ -1,5 +1,4 @@
-import { Nav, Navbar, NavItem, NavLink, NavDropdown } from "react-bootstrap";
-// import { BrowserRouter as Link } from "react-router-dom";
+import { Nav, Navbar, NavLink, NavDropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
