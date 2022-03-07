@@ -1,0 +1,52 @@
+.table {
+
+    margin-top: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    .removeBtn {
+        color: red;
+        font-size: 2.5rem;
+        padding: 0.5em 0.5em 0.5em 1em;
+    }
+
+    .quantity {
+        font-weight: bold;
+        margin: 0.3em;
+
+    }
+
+    .count {
+        color: blue;
+        font-size: 1.3rem;
+        padding: 0.2rem;
+    }
+}
+
+.shippingDetails {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 1em;
+    margin-bottom: 1em;
+
+}
+
+.summary {
+    td {
+        text-align: right;
+    }
+}
+
+.CartOverlay {
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+    img {
+        margin: 3rem;
+        width: 250px;
+    }
+
+    .confirmed {
+        padding-bottom: 2rem;
+
+    }
+}
