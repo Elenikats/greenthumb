@@ -26,7 +26,7 @@ const plants = [
         name : "Monstera Deliciosa var. Borsigiana Variegata",
         image: plant1,
         size : "medium",
-        price: "300 €",
+        price: "300",
         description : "Variegated Monstera Deliciosa var. Borsigiana, a.k.a Monstera albo, with white variegated leaves is probably one of the most sought after plants these days. We have only got a handful of them as they are very hard to get."
     },
 

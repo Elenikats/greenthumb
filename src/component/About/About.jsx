@@ -1,4 +1,4 @@
-import aboutUsImg from "../../plant-photos/homepage-decor/photo-1607604971893-e4a9535a8ca2.jpeg";
+import aboutUsImg from "../../plant-photos/homepage-decor/about-photo.png";
 // import plant1 from "../../plant-photos/plants/albo-monstera.jpeg";
 // import plant2 from "../../plant-photos/plants/alocasia-frydek.jpeg";
 // import plant3 from "../../plant-photos/plants/alocasia-portodora.jpeg";
@@ -51,13 +51,14 @@ export default function About() {
       <Container>
         <Row>
           <Col sm={7}>
-            <h2>About us!</h2>
+            <h2>Let us introduce ourselves!</h2>
             <p>
-              we are lbalblbalblalbalblablabalaalblab.blalbllabla. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Culpa impedit, unde
-              fugiat neque adipisci commodi libero non quo ipsam optio
-              accusamus! Recusandae quisquam molestias doloribus itaque facilis
-              minima aliquam molestiae.
+              We are three passionate web-developers who just happen to love
+              houseplants and nature.
+            </p>
+            <p>
+              We created this website with React.js for our SPA final project
+              during our studies in Digital Career Institute.
             </p>
           </Col>
           <Col sm={5}>

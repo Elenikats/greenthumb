@@ -15,23 +15,25 @@ export default function BlogCarousel() {
             <img className="d-block w-100" src={wide1} alt="First slide" />
             <Carousel.Caption>
               <h5>Jungle vibes</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <p>
+                {" "}
+                Just a couple of plants are not enough for you? Are you going
+                more for the jungle look? This guide is all you need!
+              </p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100" src={wide2} alt="Second slide" />
             <Carousel.Caption>
               <h5>101 guide: decorate your house with plants</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>A guide to bringing nature vibes in your home.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img className="d-block w-100" src={wide3} alt="Third slide" />
             <Carousel.Caption>
-              <h5>All about hanging plants</h5>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+              <h5>10 best indoor hanging plants</h5>
+              <p>Discover 10 easy-to-take-care trailing houseplants .</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

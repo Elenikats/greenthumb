@@ -13,7 +13,7 @@ import plants from "../../plants.js";
 console.log(plants);
 export default function Products() {
   return (
-    <div className="container-fluid d-flex justify-content-center ">
+    <div className="Products container-fluid d-flex justify-content-center animate__animated animate__fadeIn">
       <Row xs={1} md={2} lg={3}>
         {plants.map((plant) => {
           return (
@@ -22,17 +22,21 @@ export default function Products() {
                 <div
                   style={{
                     width: "100%",
-                    height: "400px",
+                    height: "60vh",
                     backgroundImage: `url(${plant.image})`,
                     backgroundPosition: "center",
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                   }}
                 />
+
                 <Card.Body>
                   <Card.Title>{plant.name}</Card.Title>
+                  <h6>{plant.price} €</h6>
                   {/* <Card.Text>{plant.description}</Card.Text> */}
-                  <Button variant="success">Buy now</Button>
+                  <div className="button-buy">
+                    <Button variant="success">Buy now</Button>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>

@@ -1,5 +1,22 @@
-.card {
-        margin: 2rem;
-        width: 400px;
+.Products {
+    .card {
+        margin: 1rem;
+        width: 90%;
+        padding: 2rem;
+
+        .card-body {
+            .button-buy {
+                display: flex;
+                flex-direction: row-reverse;
+                .btn {
+                    background-color: rgb(102, 161, 99);
+                }
+                
+            }
+        }
+
     }
+
+
+}
 
