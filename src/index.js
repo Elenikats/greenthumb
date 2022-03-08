@@ -4,7 +4,9 @@ import App from "./App.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+  <UserContextProvider>
+        <App />
+  </UserContextProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );

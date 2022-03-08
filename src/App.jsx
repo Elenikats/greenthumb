@@ -8,6 +8,7 @@ import NotFound from "./component/NotFound.jsx";
 import Cart from "./component/Cart/Cart.jsx";
 import Login from "./component/Login/Login.jsx";
 import "./App.scss";
+import Register from "./component/Login/Register.jsx"
 
 export default function App() {
   return (
@@ -18,10 +19,12 @@ export default function App() {
         <Route index></Route>
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />}> 
+        <Route path=":register" element={<Register />}/>
+        </Route>
         <Route path="/cart" element={<Cart />} />
-
         <Route path="*" element={<NotFound />} />
+        
       </Routes>
     </div>
   );
