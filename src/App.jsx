@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import { Route, Routes } from "react-router-dom";
 import Nav from "./component/Nav/Nav.jsx";
 import About from "./component/About/About.jsx";
@@ -16,12 +15,11 @@ export default function App() {
       <Nav />
 
       <Routes>
-        <Route index></Route>
+        
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/login" element={<Login />}> 
-        <Route path=":register" element={<Register />}/>
-        </Route>
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/register" element={<Register />}/>
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
         

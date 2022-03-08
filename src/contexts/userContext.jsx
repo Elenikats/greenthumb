@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react"
 
+export const userContext = React.createContext();
 const userLocal = localStorage.getItem("user") 
 
 const defaultUser = userLocal ? JSON.parse(userLocal) : null
@@ -20,4 +21,4 @@ export default function UserContextProvider(props) {
             {props.children}
         </userContext.Provider>
     )
-}
+    };
