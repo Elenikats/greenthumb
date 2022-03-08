@@ -6,6 +6,8 @@ import Products from "./component/Products/Products.jsx";
 import NotFound from "./component/NotFound.jsx";
 import Cart from "./component/Cart/Cart.jsx";
 import Login from "./component/Login/Login.jsx";
+import Main from "./component/Homepage/Main.jsx";
+import Blog from "./component/Blog/Blog.jsx";
 import "./App.scss";
 
 export default function App() {
@@ -14,9 +16,10 @@ export default function App() {
       <Nav />
 
       <Routes>
-        <Route index></Route>
+        <Route index element={<Main />}></Route>
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
 

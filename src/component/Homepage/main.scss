@@ -1,0 +1,42 @@
+.Main {
+    .BlogCarousel {
+        margin: 4rem;
+        h1 {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .flex-carousel-container {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        
+            .carousel {
+                width: 60vw;
+                border-radius: 5%;
+                color: white;
+                .carousel-inner {
+                    border-radius: 5%;
+
+                    .carousel-caption {
+                        color: white;
+                        background-color: rgba(124, 170, 102, 0.801);
+                    }
+
+                // .carousel-control-prev-icon {
+                //     color: white;
+                //     background-color: white;
+                // }
+                    
+                }
+
+                img {
+                    border-radius: 5%;
+                }
+            
+            }
+        }
+    }
+}
+
+
