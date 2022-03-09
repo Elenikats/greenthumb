@@ -24,9 +24,11 @@ const users = [
       street: "long street 2",
       pc: "12345",
       city: "dukburg",
-      ccNo: "4018483339923440033",
+      ccNo:"4018483339923440033",
       ccExp: "0924",
       ccCvc: "213",
     },
   },
 ];
+
+export default users;

@@ -9,22 +9,25 @@ import Login from "./component/Login/Login.jsx";
 import Main from "./component/Homepage/Main.jsx";
 import Blog from "./component/Blog/Blog.jsx";
 import "./App.scss";
+import Register from "./component/Login/Register.jsx"
 
 export default function App() {
   return (
     <div>
       <Nav />
-
       <Routes>
         <Route index element={<Main />}></Route>
         <Route path="/home" element={<Main />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="login">
+        <Route index  element={<Login />} />
+            <Route path="register" element={<Register />} />
+        </Route>
         <Route path="/cart" element={<Cart />} />
-
         <Route path="*" element={<NotFound />} />
+        
       </Routes>
     </div>
   );
