@@ -1,4 +1,5 @@
-import { useRef } from "react"
+import { useRef } from "react";
+import { NavLink } from "react-router-dom"
 
 function Register(props) {
     const nameRef = useRef()
@@ -31,4 +32,4 @@ function Register(props) {
     )
 }
 
-export default Register
+export default Register;

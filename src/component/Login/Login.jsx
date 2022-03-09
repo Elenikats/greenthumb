@@ -1,14 +1,17 @@
-import { Nav, NavLink } from 'react-bootstrap';
+import { Nav, NavLink } from 'react-router-dom';
 import FloatingLabel from 'react-bootstrap/FloatingLabel'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { userContext } from '../../contexts/userContext';
 import { useContext, useRef } from 'react';
 import usersArray from '../../user.js'
+import { Routes } from 'react-router-dom';
+
 
 
 
 export default function Login() {
+ 
 const [user, setUser] = useContext(userContext)    
 console.log(user);
 
@@ -20,14 +23,16 @@ const emailRef = useRef()
       console.log("email exist");
       
     }else {
-      console.log("no email");
+      // <Routes>
+      //   <Route path="/login/register" element={<Register />} />
+      // </Routes>
     }
     // console.log(checkLogin); 
   console.log(emailRef);
 
   }
 
-  function handleRegister(e) {e.preventDefault()}
+ 
   return (
   <>
   
@@ -42,9 +47,9 @@ const emailRef = useRef()
       </FloatingLabel>
       <Button onClick={handleLogin} variant="success">Log in</Button>{' '}
 
-    <NavLink to="/register">
-    <Button onClick={handleRegister} variant="success">Register</Button>{' '}
-      
+    <NavLink to="register">
+    {/* <Button variant="success">Register</Button>{' '} */}
+      Register
       </NavLink>  
   </>
  

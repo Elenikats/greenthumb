@@ -13,13 +13,14 @@ export default function App() {
   return (
     <div>
       <Nav />
-
       <Routes>
         
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/login" element={<Login />} /> 
-        <Route path="/register" element={<Register />}/>
+        <Route path="login">
+            <Route index  element={<Login />} />
+            <Route path="register" element={<Register />} />
+        </Route>
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
         
