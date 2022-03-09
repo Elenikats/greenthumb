@@ -36,6 +36,9 @@ export default function App() {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
+          <LinkContainer to="/home">
+            <Nav.Link>Home</Nav.Link>
+          </LinkContainer>
           <LinkContainer to="/about">
             <Nav.Link>About us</Nav.Link>
           </LinkContainer>
