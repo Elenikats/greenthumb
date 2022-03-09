@@ -1,11 +1,16 @@
 import { Nav, Navbar, NavLink, NavDropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
-
 import Logo from "../../assets/Logo_250px.png";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
+import { useContext } from "react";
+import { userContext } from '../../contexts/userContext.jsx'
+
 export default function App() {
+
+  const [user, setUser, users, setUsers] = useContext(userContext) 
+  console.log(user);
   return (
     // <h2>this is the nav</h2>
     <Navbar collapseOnSelect expand="xs">
@@ -15,11 +20,12 @@ export default function App() {
           <img
             src={Logo}
             alt="logo"
-            class="animate__animated animate__slideInDown"
+            className="animate__animated animate__slideInDown"
           />
         </Navbar.Brand>
       </LinkContainer>
       <Nav className="loginAndCartContainer">
+          <p className="userName">{user.firstName}</p>
         <LinkContainer to="/login">
           <NavLink>
             <FontAwesomeIcon icon={faUser} className="icon icon1" />

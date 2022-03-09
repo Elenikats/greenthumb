@@ -1,0 +1,16 @@
+.registerContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .registerForm{
+
+        padding: 2rem;
+
+        h1{
+            margin: 2rem;
+            text-align: center;
+        }
+    }
+}
