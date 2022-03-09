@@ -15,7 +15,7 @@ export default function App() {
           <img
             src={Logo}
             alt="logo"
-            class="animate__animated animate__slideInDown"
+            className="animate__animated animate__slideInDown"
           />
         </Navbar.Brand>
       </LinkContainer>

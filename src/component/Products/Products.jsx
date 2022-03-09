@@ -31,9 +31,11 @@ export default function Products() {
                 />
 
                 <Card.Body>
-                  <Card.Title>{plant.name}</Card.Title>
-                  <h6>{plant.price} €</h6>
                   {/* <Card.Text>{plant.description}</Card.Text> */}
+                  <div>
+                    <Card.Title>{plant.name}</Card.Title>
+                    <h6>{plant.price} €</h6>
+                  </div>
                   <div className="button-buy">
                     <Button variant="success">Buy now</Button>
                   </div>

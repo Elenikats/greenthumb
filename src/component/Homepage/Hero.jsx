@@ -1,5 +1,4 @@
-import monsti from "../../../plant-photos/homepage-decor/monsti-big.jpg";
-import "./hero.scss";
+import monsti from "../../plant-photos/homepage-decor/monsti-big.jpg";
 
 export default function Hero() {
   return (
@@ -13,7 +12,9 @@ export default function Hero() {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
-      />
+      >
+        <button>hi button</button>
+      </div>
     </div>
   );
 }
