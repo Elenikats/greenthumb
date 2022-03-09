@@ -7,24 +7,22 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import "./cart.scss";
 import CartOverlay from "./CartOverlay.jsx";
+import RemoveItem from "./RemoveItem.jsx";
 
 export default function Cart() {
-  const [quantity, setQuantity] = useState(2);
+  const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
 
-  function removeItem() {}
+  // function removeItem() {
+  //   return <RemoveItem />;
+  // }
 
-  function decreaseQuantity() {
+  function decreaseQuantity(e) {
+    console.log(e.target.value);
     setQuantity(quantity - 1);
   }
 
   function increaseQuantity() {}
-
-  // function handleSubmit() {
-  //   setOpen(true);
-  //   console.log(open);
-  //   return <CartOverlay open={open} />;
-  // }
 
   if (!open) {
     return (
@@ -37,8 +35,13 @@ export default function Cart() {
                 {plants.map((plant) => {
                   return (
                     <tr>
-                      <td className="removeBtn" onClick={removeItem}>
-                        x
+                      <td>
+                        <button
+                          className="removeBtn"
+                          onClick={() => <RemoveItem />}
+                        >
+                          x
+                        </button>
                       </td>
                       <td>
                         <img

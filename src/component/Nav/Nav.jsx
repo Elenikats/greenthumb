@@ -4,6 +4,7 @@ import { faUser, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 import Logo from "../../assets/Logo_250px.png";
 import { LinkContainer } from "react-router-bootstrap";
+import "./nav.scss";
 export default function App() {
   return (
     // <h2>this is the nav</h2>
@@ -11,21 +12,27 @@ export default function App() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <LinkContainer to="/">
         <Navbar.Brand>
-          <img src={Logo} alt="" />
+          <img
+            src={Logo}
+            alt="logo"
+            class="animate__animated animate__slideInDown"
+          />
         </Navbar.Brand>
       </LinkContainer>
-      <Nav>
+      <Nav className="loginAndCartContainer">
         <LinkContainer to="/login">
           <NavLink>
-            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faUser} className="icon icon1" />
           </NavLink>
         </LinkContainer>
         <LinkContainer to="/cart">
           <NavLink>
-            <FontAwesomeIcon icon={faShoppingBasket} />
+            <FontAwesomeIcon icon={faShoppingBasket} className="icon" />
           </NavLink>
         </LinkContainer>
       </Nav>
+
+      {/* Sidebar */}
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
@@ -34,6 +41,10 @@ export default function App() {
           </LinkContainer>
           <LinkContainer to="/products">
             <Nav.Link>Plants</Nav.Link>
+          </LinkContainer>
+
+          <LinkContainer to="/blog">
+            <Nav.Link>Blog</Nav.Link>
           </LinkContainer>
 
           <LinkContainer to="/plantdoctor">
