@@ -23,9 +23,7 @@ const emailRef = useRef()
       console.log("email exist");
       
     }else {
-      // <Routes>
-      //   <Route path="/login/register" element={<Register />} />
-      // </Routes>
+  
     }
     // console.log(checkLogin); 
   console.log(emailRef);
