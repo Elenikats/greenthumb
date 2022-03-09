@@ -45,7 +45,7 @@
     .MainContent {
         background-color: rgb(255,244,245);
         width: 100%;
-        height: 80vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -61,19 +61,27 @@
                 padding: 1rem;
                 text-transform: uppercase;
 
+                h1 {
+                    text-align: center;
+                }
+
                 p {
                     margin: 1.3rem;
                 }
 
                 .iconShopWithUs {
                     margin-right: 1rem;
+                    font-size: 1.2rem;
                 }
             }
 
             .mainCol-2{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 .tropicalWallpaperImg {
                     width: 100%;
-                    height: 100%;
                 }
             }  
         }    
@@ -100,7 +108,7 @@
   
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
     // MAIN CONTENT - WHY SHOP WITH US
     .MainContent {
         .mainRow-1 {
@@ -109,10 +117,7 @@
 
                 p {
                     margin: 1rem;
-                }
-
-                .iconShopWithUs {
-                    margin-right: 1rem;
+                    text-align: center;
                 }
             }
         }    

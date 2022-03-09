@@ -6,6 +6,7 @@ import {
   faLeaf,
   faEarthAmerica,
   faTruck,
+  faFaceSmile,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function MainContent() {
@@ -13,7 +14,7 @@ export default function MainContent() {
     <div className="MainContent">
       <Row className="mainRow-1 ">
         <Col md={6} className="mainCol-1">
-          <h1>Why shop with us?</h1>
+          <h1>Why shop with us ?</h1>
           <div className="paragraphs-shopWithUs-con">
             <p>
               <FontAwesomeIcon icon={faLeaf} className="iconShopWithUs" />
@@ -29,6 +30,10 @@ export default function MainContent() {
             <p>
               <FontAwesomeIcon icon={faTruck} className="iconShopWithUs" />
               Free shipping over 50 euro
+            </p>
+            <p>
+              <FontAwesomeIcon icon={faFaceSmile} className="iconShopWithUs" />
+              Excellent customer service
             </p>
           </div>
         </Col>
