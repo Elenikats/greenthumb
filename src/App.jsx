@@ -12,7 +12,7 @@ import "./App.scss";
 import Register from "./component/Login/Register.jsx";
 import Footer from "./Footer/Footer.jsx";
 import { useState } from "react";
-
+import ScrollToTop from "./component/ScrollButton/ScrollButton.jsx";
 
 export default function App() {
   //Array of all items in the cart
@@ -21,6 +21,7 @@ export default function App() {
   return (
     <div>
       <Nav />
+      <ScrollToTop />
 
       <Routes>
         <Route index element={<Main />}></Route>
