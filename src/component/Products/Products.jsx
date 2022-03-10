@@ -10,7 +10,7 @@ import plants from "../../plants.js";
 // import {plantFolder} from "./config.js"
 // console.log(plantFolder);
 
-console.log(plants);
+// console.log(plants);
 export default function Products() {
   return (
     <div className="Products container-fluid d-flex justify-content-center animate__animated animate__fadeIn">

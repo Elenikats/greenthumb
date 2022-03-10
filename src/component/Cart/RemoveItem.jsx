@@ -4,7 +4,7 @@ function RemoveItem() {
   <p>hello</p>;
   //   console.log(cartItems);
   //   function deleteItem(cartItems) {
-  //     const filtered = cartItems.filter((u) => u.id !== user.id);
+  //     const filtered = cartItems.filter((u) => u.id !== cart.id);
   //     setCartItems(filtered);
   //   }
   //   return (
