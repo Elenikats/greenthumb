@@ -4,10 +4,10 @@ import { faUser, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/Logo_250px.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { userContext } from "../../contexts/userContext.jsx";
 
-export default function App() {
+export default function App({ counterCart, setCounterCart }) {
   const [user, setUser, users, setUsers] = useContext(userContext);
   console.log(user);
   return (
@@ -36,6 +36,7 @@ export default function App() {
             <FontAwesomeIcon icon={faShoppingBasket} className="icon" />
           </NavLink>
         </LinkContainer>
+        <div className="counterCart">{counterCart}</div>
       </Nav>
 
       {/* Sidebar */}
