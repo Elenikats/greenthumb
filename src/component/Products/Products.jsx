@@ -30,7 +30,7 @@ export default function Products({ cart, setCart }) {
       <Row xs={1} md={2} lg={3}>
         {plants.map((plant) => {
           return (
-            <Col className="container-fluid d-flex justify-content-center ">
+            <Col className="container-fluid d-flex justify-content-center  ">
               <Card>
                 <div
                   style={{
@@ -38,15 +38,17 @@ export default function Products({ cart, setCart }) {
                     height: "60vh",
                     backgroundImage: `url(${plant.image})`,
                     backgroundPosition: "center",
-                    backgroundSize: "contain",
+                    backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                   }}
                 />
 
                 <Card.Body>
-                  <Card.Title>{plant.name}</Card.Title>
-                  <h6>{plant.price} €</h6>
                   {/* <Card.Text>{plant.description}</Card.Text> */}
+                  <div>
+                    <Card.Title>{plant.name}</Card.Title>
+                    <h6>{plant.price} €</h6>
+                  </div>
                   <div className="button-buy">
                     <Button
                       onClick={() => handleShopping(plant)}

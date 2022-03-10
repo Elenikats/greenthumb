@@ -10,7 +10,9 @@ import Main from "./component/Homepage/Main.jsx";
 import Blog from "./component/Blog/Blog.jsx";
 import "./App.scss";
 import Register from "./component/Login/Register.jsx";
+import Footer from "./Footer/Footer.jsx";
 import { useState } from "react";
+
 
 export default function App() {
   //Array of all items in the cart
@@ -19,6 +21,7 @@ export default function App() {
   return (
     <div>
       <Nav />
+
       <Routes>
         <Route index element={<Main />}></Route>
         <Route path="/home" element={<Main />} />
@@ -35,6 +38,8 @@ export default function App() {
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }
