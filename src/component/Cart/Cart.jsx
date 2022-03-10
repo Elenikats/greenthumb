@@ -1,15 +1,21 @@
+import "./cart.scss";
+
 import { useState, useContext, useEffect } from "react";
-import plants from "../../plants.js";
+import { userContext } from "../../contexts/userContext.jsx";
+import { cartContext } from "../../contexts/cartContext.jsx";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import "./cart.scss";
+
 import CartOverlay from "./CartOverlay.jsx";
 import RemoveItem from "./RemoveItem.jsx";
-import { userContext } from "../../contexts/userContext.jsx";
-import { cartContext } from "../../contexts/cartContext.jsx";
+import plants from "../../plants.js";
 
 export default function Cart() {
   const cartArray = [
@@ -35,7 +41,7 @@ export default function Cart() {
       quantity: 1,
     },
   ];
-  const [open, setOpen] = useState(false);
+  const [shoppingCompleted, setShoppingCompleted] = useState(false);
 
   const [cart, setCart] = useState(cartArray);
   const [cartItem, setCartItem] = useState({});
@@ -43,6 +49,11 @@ export default function Cart() {
   console.log("cart", cart);
   const [subtotal, setSubtotal] = useState(20);
   const [total, setTotal] = useState(0);
+
+  const itemsPrice = cart.reduce((a, c) => a + c.price * c.quantity, 0);
+  const shippingCosts = itemsPrice < 40 ? "7.50 €" : "free";
+  const totalPrice = itemsPrice < 40 ? itemsPrice + 7.5 : itemsPrice;
+
   const [user, setUser, users, setUsers] = useContext(userContext);
 
   // const [cartItems, setCartItems] = useContext(cartContext);
@@ -51,26 +62,17 @@ export default function Cart() {
     console.log("whats product", product.id);
     const filtered = cart.filter((item) => item.id !== product.id);
     setCart(filtered);
-    console.log(cart);
   }
 
   function decreaseQuantity(product) {
-    console.log("product", product);
-
     setCartItem((product.quantity -= 1));
-    console.log("CartItem", cartItem);
   }
 
   function increaseQuantity(product) {
     setCartItem((product.quantity += 1));
   }
 
-  function calcSubItem(product) {
-    setSubtotalItem(product.price * product.quantity);
-    console.log(subtotalItem);
-  }
-
-  if (!open) {
+  if (!shoppingCompleted) {
     return (
       <Container fluid="lg">
         <h1>Cart</h1>
@@ -86,7 +88,10 @@ export default function Cart() {
                           className="removeBtn"
                           onClick={() => handleRemoveItem(product)}
                         >
-                          x
+                          <FontAwesomeIcon
+                            icon={faTrashCan}
+                            className="icon icon1"
+                          />
                         </button>
                       </td>
                       <td>
@@ -103,19 +108,19 @@ export default function Cart() {
                         <span>{product.price} €</span>
                       </td>
                       <td>
-                        <span
+                        <button
                           className="quantity count"
                           onClick={() => decreaseQuantity(product)}
                         >
                           -
-                        </span>
+                        </button>
                         <span className="quantity">{product.quantity}</span>
-                        <span
+                        <button
                           className="quantity count"
                           onClick={() => increaseQuantity(product)}
                         >
                           +
-                        </span>
+                        </button>
                       </td>
                       <td>
                         <span>{product.price * product.quantity} €</span>
@@ -132,15 +137,15 @@ export default function Cart() {
               <tbody className="summary">
                 <tr>
                   <th>subtotal:</th>
-                  <td>325</td>
+                  <td>{itemsPrice.toFixed(2)} €</td>
                 </tr>
                 <tr>
                   <th>shipping:</th>
-                  <td>{subtotal < 40 ? "7.50 €" : "free"}</td>
+                  <td>{shippingCosts}</td>
                 </tr>
                 <tr>
-                  <th>TOTAL:</th>
-                  <td>{subtotal < 40 ? subtotal + 7.5 : subtotal} €</td>
+                  <th>TOTAL (incl. tax):</th>
+                  <td>{totalPrice.toFixed(2)} €</td>
                 </tr>
               </tbody>
             </Table>
@@ -155,7 +160,10 @@ export default function Cart() {
               </p>
             </div>
 
-            <Button variant="success" onClick={() => setOpen(!open)}>
+            <Button
+              variant="success"
+              onClick={() => setShoppingCompleted(!shoppingCompleted)}
+            >
               submit
             </Button>
           </Col>
@@ -163,5 +171,5 @@ export default function Cart() {
       </Container>
     );
   }
-  return <CartOverlay open={open} />;
+  return <CartOverlay shoppingCompleted={shoppingCompleted} />;
 }

@@ -1,16 +1,21 @@
-.registerContainer{
+.registerContainer {
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .registerForm{
+    .registerForm {
 
         padding: 2rem;
 
-        h1{
+        h1 {
             margin: 2rem;
             text-align: center;
         }
+    }
+
+    .form-control:focus {
+        border-color: #a3c4bc;
+        box-shadow: 0 0 0 0.1rem #8ebdb1;
     }
 }

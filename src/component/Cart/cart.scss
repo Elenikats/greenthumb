@@ -4,9 +4,14 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     .removeBtn {
-        color: red;
-        font-size: 2.5rem;
-        padding: 0.2em 0.2em 0.2em 0.2em;
+        border: none;
+        background-color: white;
+        font-size: 1.3rem;
+        margin-left: 0.3rem;
+
+        &:hover {
+            color: rgb(155, 22, 22);
+        }
     }
 
     .quantity {
@@ -17,6 +22,8 @@
 
     .count {
         color: blue;
+        background-color: white;
+        border: none;
         font-size: 1.3rem;
         padding: 0.2rem;
     }
