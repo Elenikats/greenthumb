@@ -11,7 +11,20 @@ import plants from "../../plants.js";
 // console.log(plantFolder);
 
 // console.log(plants);
-export default function Products() {
+export default function Products({ cart, setCart }) {
+  function handleShopping(plant) {
+    const exist = cart.find((item) => item.id === plant.id);
+    const cartWithFilteredOutTheOneThatIFound = cart.filter(
+      (item) => item.id !== plant.id
+    );
+
+    if (exist) {
+      exist.quantity += 1;
+      setCart([...cartWithFilteredOutTheOneThatIFound, exist]);
+    } else {
+      setCart([...cart, plant]);
+    }
+  }
   return (
     <div className="Products container-fluid d-flex justify-content-center animate__animated animate__fadeIn">
       <Row xs={1} md={2} lg={3}>
@@ -35,7 +48,12 @@ export default function Products() {
                   <h6>{plant.price} €</h6>
                   {/* <Card.Text>{plant.description}</Card.Text> */}
                   <div className="button-buy">
-                    <Button variant="success">Buy now</Button>
+                    <Button
+                      onClick={() => handleShopping(plant)}
+                      variant="success"
+                    >
+                      Buy now
+                    </Button>
                   </div>
                 </Card.Body>
               </Card>

@@ -1,8 +1,8 @@
 import thumb from "../../assets/favicon.png";
 import "./cart.scss";
 
-export default function CartOverlay({ open }) {
-  if (!open) {
+export default function CartOverlay({ shoppingCompleted }) {
+  if (!shoppingCompleted) {
     return null;
   }
 

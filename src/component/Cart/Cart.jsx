@@ -18,7 +18,7 @@ import RemoveItem from "./RemoveItem.jsx";
 import plants from "../../plants.js";
 import { NavLink } from "react-router-dom";
 
-export default function Cart() {
+export default function Cart({ cart, setCart }) {
   const cartArray = [
     {
       id: 1,
@@ -46,12 +46,9 @@ export default function Cart() {
   //check if shopping is in progress or done
   const [shoppingCompleted, setShoppingCompleted] = useState(false);
 
-  //Array of all items in the cart
-  const [cart, setCart] = useState(cartArray);
-  //-----
+  //--??---
   const [cartItem, setCartItem] = useState({});
 
-  console.log("cart", cart);
   //Pricing
   const itemsPrice = cart.reduce((a, c) => a + c.price * c.quantity, 0);
   const shippingCosts = itemsPrice < 40 ? "7.50 €" : "free";
@@ -59,7 +56,7 @@ export default function Cart() {
 
   //User details
   const [user, setUser, users, setUsers] = useContext(userContext);
-
+  console.log(user);
   // const [cartItems, setCartItems] = useContext(cartContext);
 
   //delete an item
@@ -71,7 +68,7 @@ export default function Cart() {
 
   //decrease number or items. If 0 item will be removed
   function decreaseQuantity(product) {
-    setCartItem((product.quantity -= 1));
+    setCartItem((product.quantity = product.quantity - 1));
     if (product.quantity < 1) {
       {
         handleRemoveItem(product);
@@ -81,7 +78,7 @@ export default function Cart() {
 
   //increase number of items
   function increaseQuantity(product) {
-    setCartItem((product.quantity += 1));
+    setCartItem((product.quantity = product.quantity + 1));
   }
 
   if (!shoppingCompleted) {

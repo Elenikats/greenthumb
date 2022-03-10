@@ -5,10 +5,11 @@ import userArray from "../user.js";
 export const userContext = React.createContext();
 
 const userLocal = localStorage.getItem("user");
-const defaultUser = userLocal ? JSON.parse(userLocal) : null;
+
+const defaultUser = !userLocal ? userArray[0] : JSON.parse(userLocal);
 
 const usersLocal = localStorage.getItem("users");
-const defaultUsers = usersLocal ? JSON.parse(usersLocal) : [];
+const defaultUsers = usersLocal ? JSON.parse(usersLocal) : userArray;
 
 export default function UserContextProvider(props) {
   const [users, setUsers] = useState(defaultUsers);
