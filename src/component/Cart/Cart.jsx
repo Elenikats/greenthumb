@@ -16,6 +16,7 @@ import Button from "react-bootstrap/Button";
 import CartOverlay from "./CartOverlay.jsx";
 import RemoveItem from "./RemoveItem.jsx";
 import plants from "../../plants.js";
+import { NavLink } from "react-router-dom";
 
 export default function Cart() {
   const cartArray = [
@@ -41,33 +42,44 @@ export default function Cart() {
       quantity: 1,
     },
   ];
+
+  //check if shopping is in progress or done
   const [shoppingCompleted, setShoppingCompleted] = useState(false);
 
+  //Array of all items in the cart
   const [cart, setCart] = useState(cartArray);
+  //-----
   const [cartItem, setCartItem] = useState({});
 
   console.log("cart", cart);
-  const [subtotal, setSubtotal] = useState(20);
-  const [total, setTotal] = useState(0);
-
+  //Pricing
   const itemsPrice = cart.reduce((a, c) => a + c.price * c.quantity, 0);
   const shippingCosts = itemsPrice < 40 ? "7.50 €" : "free";
   const totalPrice = itemsPrice < 40 ? itemsPrice + 7.5 : itemsPrice;
 
+  //User details
   const [user, setUser, users, setUsers] = useContext(userContext);
 
   // const [cartItems, setCartItems] = useContext(cartContext);
 
+  //delete an item
   function handleRemoveItem(product) {
     console.log("whats product", product.id);
     const filtered = cart.filter((item) => item.id !== product.id);
     setCart(filtered);
   }
 
+  //decrease number or items. If 0 item will be removed
   function decreaseQuantity(product) {
     setCartItem((product.quantity -= 1));
+    if (product.quantity < 1) {
+      {
+        handleRemoveItem(product);
+      }
+    }
   }
 
+  //increase number of items
   function increaseQuantity(product) {
     setCartItem((product.quantity += 1));
   }
@@ -77,7 +89,13 @@ export default function Cart() {
       <Container fluid="lg">
         <h1>Cart</h1>
         <Row>
+          {/* Left side table */}
           <Col md={8}>
+            {cart.length === 0 && (
+              <div className="emptyCart animate__animated animate__slideInLeft">
+                Cart is empty
+              </div>
+            )}
             <Table>
               <tbody>
                 {cart.map((product) => {
@@ -132,41 +150,47 @@ export default function Cart() {
             </Table>
           </Col>
 
-          <Col md={4}>
-            <Table>
-              <tbody className="summary">
-                <tr>
-                  <th>subtotal:</th>
-                  <td>{itemsPrice.toFixed(2)} €</td>
-                </tr>
-                <tr>
-                  <th>shipping:</th>
-                  <td>{shippingCosts}</td>
-                </tr>
-                <tr>
-                  <th>TOTAL (incl. tax):</th>
-                  <td>{totalPrice.toFixed(2)} €</td>
-                </tr>
-              </tbody>
-            </Table>
-            <div className="shippingDetails">
-              <strong>plants will be sent to:</strong>
-              <p>
-                {user.firstName} {user.lastName}
-              </p>
-              <p>{user.address}</p>
-              <p>
-                {user.zip} {user.city}
-              </p>
-            </div>
+          {/* Right side table */}
+          {cart.length !== 0 && (
+            <Col md={4}>
+              <Table>
+                <tbody className="summary">
+                  <tr>
+                    <th>subtotal:</th>
+                    <td>{itemsPrice.toFixed(2)} €</td>
+                  </tr>
+                  <tr>
+                    <th>shipping:</th>
+                    <td>{shippingCosts}</td>
+                  </tr>
+                  <tr>
+                    <th>TOTAL (incl. tax):</th>
+                    <td>{totalPrice.toFixed(2)} €</td>
+                  </tr>
+                </tbody>
+              </Table>
+              <div className="shippingDetails">
+                <strong>plants will be sent to:</strong>
+                <br />
+                <br />
+                <p>
+                  {user.firstName} {user.lastName}
+                  <br />
+                  {user.address}
+                  <br />
+                  {user.zip} {user.city}
+                </p>
+              </div>
 
-            <Button
-              variant="success"
-              onClick={() => setShoppingCompleted(!shoppingCompleted)}
-            >
-              submit
-            </Button>
-          </Col>
+              <Button
+                variant="success"
+                onClick={() => setShoppingCompleted(!shoppingCompleted)}
+              >
+                submit
+              </Button>
+              <NavLink to="/products">Forgot something?</NavLink>
+            </Col>
+          )}
         </Row>
       </Container>
     );

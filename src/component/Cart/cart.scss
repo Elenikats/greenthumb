@@ -1,12 +1,19 @@
+.emptyCart {
+    font-size: 2rem;
+    margin: 6rem;
+}
+
 .table {
 
     margin-top: 3rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(39, 90, 19, 0.35) 0px 5px 15px;
+    border-radius: 0.25rem;
+
 
     .removeBtn {
         border: none;
         background-color: white;
-        font-size: 1.3rem;
+
         margin-left: 0.3rem;
 
         &:hover {
@@ -21,22 +28,33 @@
     }
 
     .count {
-        color: blue;
+        color: green;
         background-color: white;
         border: none;
         font-size: 1.3rem;
         padding: 0.2rem;
     }
+
+
 }
 
 .shippingDetails {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(39, 90, 19, 0.35) 0px 5px 15px;
+    border-radius: 0.25rem;
     padding: 1em;
     margin-bottom: 1em;
 
+
+
+}
+
+.btn {
+    margin-right: 1rem;
 }
 
 .summary {
+
+
     td {
         text-align: right;
     }
