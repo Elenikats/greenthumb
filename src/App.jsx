@@ -11,8 +11,13 @@ import Blog from "./component/Blog/Blog.jsx";
 import "./App.scss";
 import Register from "./component/Login/Register.jsx";
 import Footer from "./Footer/Footer.jsx";
+import { useState } from "react";
+
 
 export default function App() {
+  //Array of all items in the cart
+  const [cart, setCart] = useState([]);
+
   return (
     <div>
       <Nav />
@@ -21,13 +26,16 @@ export default function App() {
         <Route index element={<Main />}></Route>
         <Route path="/home" element={<Main />} />
         <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
+        <Route
+          path="/products"
+          element={<Products cart={cart} setCart={setCart} />}
+        />
         <Route path="/blog" element={<Blog />} />
         <Route path="login">
           <Route index element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

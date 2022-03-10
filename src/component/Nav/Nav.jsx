@@ -24,7 +24,9 @@ export default function App() {
         </Navbar.Brand>
       </LinkContainer>
       <Nav className="loginAndCartContainer">
-        <p className="userName">{user.firstName}</p>
+
+        <p className="userName">Hello {user ? user.firstName : ""}</p>
+
         <LinkContainer to="/login">
           <NavLink>
             <FontAwesomeIcon icon={faUser} className="icon icon1" />
