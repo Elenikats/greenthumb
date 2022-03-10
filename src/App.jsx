@@ -12,15 +12,17 @@ import "./App.scss";
 import Register from "./component/Login/Register.jsx";
 import Footer from "./Footer/Footer.jsx";
 import { useState } from "react";
-
+import ScrollToTop from "./component/ScrollButton/ScrollButton.jsx";
 
 export default function App() {
   //Array of all items in the cart
   const [cart, setCart] = useState([]);
+  const [counterCart, setCounterCart] = useState("");
 
   return (
     <div>
-      <Nav />
+      <Nav counterCart={counterCart} setCounterCart={setCounterCart} />
+      <ScrollToTop />
 
       <Routes>
         <Route index element={<Main />}></Route>
@@ -28,7 +30,14 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route
           path="/products"
-          element={<Products cart={cart} setCart={setCart} />}
+          element={
+            <Products
+              cart={cart}
+              setCart={setCart}
+              counterCart={counterCart}
+              setCounterCart={setCounterCart}
+            />
+          }
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="login">

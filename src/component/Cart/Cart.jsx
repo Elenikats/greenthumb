@@ -1,6 +1,8 @@
 import "./cart.scss";
 
 import { useState, useContext, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+
 import { userContext } from "../../contexts/userContext.jsx";
 import { cartContext } from "../../contexts/cartContext.jsx";
 
@@ -14,9 +16,6 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 import CartOverlay from "./CartOverlay.jsx";
-import RemoveItem from "./RemoveItem.jsx";
-import plants from "../../plants.js";
-import { NavLink } from "react-router-dom";
 
 export default function Cart({ cart, setCart }) {
   const cartArray = [
