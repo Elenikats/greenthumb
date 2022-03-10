@@ -1,7 +1,7 @@
 import { Nav, Navbar, NavLink, NavDropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
-import Logo from "../../assets/Logo_250px.png";
+import Logo from "../../assets/Logo_250px.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
 import { useContext } from "react";
@@ -24,7 +24,6 @@ export default function App() {
         </Navbar.Brand>
       </LinkContainer>
       <Nav className="loginAndCartContainer">
-
         <p className="userName">Hello {user ? user.firstName : ""}</p>
 
         <LinkContainer to="/login">
