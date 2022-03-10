@@ -17,7 +17,7 @@ export default function Products() {
       <Row xs={1} md={2} lg={3}>
         {plants.map((plant) => {
           return (
-            <Col className="container-fluid d-flex justify-content-center ">
+            <Col className="container-fluid d-flex justify-content-center  ">
               <Card>
                 <div
                   style={{
@@ -25,7 +25,7 @@ export default function Products() {
                     height: "60vh",
                     backgroundImage: `url(${plant.image})`,
                     backgroundPosition: "center",
-                    backgroundSize: "contain",
+                    backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                   }}
                 />

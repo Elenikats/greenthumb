@@ -1,3 +1,3 @@
 export default function NotFound() {
-  return <h1>Thumbs Down, product not found!</h1>;
+  return <h1>Thumbs Down, page not found!</h1>;
 }

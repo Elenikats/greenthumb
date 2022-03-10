@@ -23,7 +23,7 @@ export default function Hero() {
         <LinkContainer to="/products">
           <NavLink>
             <Button variant="success">
-              Shop Now{" "}
+              Shop Now
               <FontAwesomeIcon icon={faArrowRightLong} className="icon-arrow" />
             </Button>
           </NavLink>

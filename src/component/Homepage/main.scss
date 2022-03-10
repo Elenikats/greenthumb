@@ -13,22 +13,26 @@
                 font-size: 3rem;
                 
             }
-            .btn {
-                margin-top: 2rem;
-                position: absolute;
-                top: 83%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                padding: .8rem 2rem;
-                
-                &:hover {
-                    color: rgb(14, 75, 14);
-                }
-
-                .icon-arrow {
-                    margin-left: .5rem;
+            a {
+                padding: 0;
+                .btn {
+                    margin-top: 2rem;
+                    position: absolute;
+                    top: 83%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    padding: .8rem 2rem;
+                    
+                    &:hover {
+                        color: rgb(14, 75, 14);
+                    }
+    
+                    .icon-arrow {
+                        margin-left: .5rem;
+                    }
                 }
             }
+            
         }
     }
 
@@ -157,20 +161,23 @@
                     font-size: 3rem;
                     
                 }
-                .btn {
-                    margin-top: 2rem;
-                    position: absolute;
-                    top: 82%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    padding: .5rem 1rem;
-                    
-                    &:hover {
-                        color: rgb(14, 75, 14);
-                    }
-    
-                    .icon-arrow {
-                        margin-left: .5rem;
+                
+                a {
+                    .btn {
+                        margin-top: 2rem;
+                        position: absolute;
+                        top: 82%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        padding: .5rem 1rem;
+                        
+                        &:hover {
+                            color: rgb(14, 75, 14);
+                        }
+        
+                        .icon-arrow {
+                            margin-left: .5rem;
+                        }
                     }
                 }
             }
