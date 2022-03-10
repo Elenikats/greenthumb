@@ -5,11 +5,10 @@ import Logo from "../../assets/Logo_250px.png";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
 import { useContext } from "react";
-import { userContext } from '../../contexts/userContext.jsx'
+import { userContext } from "../../contexts/userContext.jsx";
 
 export default function App() {
-
-  const [user, setUser, users, setUsers] = useContext(userContext) 
+  const [user, setUser, users, setUsers] = useContext(userContext);
   console.log(user);
   return (
     // <h2>this is the nav</h2>
@@ -25,7 +24,7 @@ export default function App() {
         </Navbar.Brand>
       </LinkContainer>
       <Nav className="loginAndCartContainer">
-          <p className="userName">{user.firstName}</p>
+        <p className="userName">{user.firstName}</p>
         <LinkContainer to="/login">
           <NavLink>
             <FontAwesomeIcon icon={faUser} className="icon icon1" />

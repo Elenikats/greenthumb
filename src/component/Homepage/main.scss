@@ -1,5 +1,37 @@
 .Main {
     overflow: hidden;
+    .Hero {
+        position: relative;
+        .banner {
+            h1 {
+                position: absolute;
+                top: 75%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: rgb(248, 183, 183);
+                text-align: center;
+                font-size: 3rem;
+                
+            }
+            .btn {
+                margin-top: 2rem;
+                position: absolute;
+                top: 83%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: .8rem 2rem;
+                
+                &:hover {
+                    color: rgb(14, 75, 14);
+                }
+
+                .icon-arrow {
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+
     .BlogCarousel {
         margin: 4rem 0;
         h1 {
@@ -88,7 +120,9 @@
     }
 }
 
-// Media Queries
+
+
+/////////////////////////////////////// Media Queries
 
 @media screen and (max-width: 1224px) {
 
@@ -103,24 +137,57 @@
                 }
              }
         }
-    }
-
-  
+    } 
 }
 
 @media screen and (max-width: 768px) {
-    // MAIN CONTENT - WHY SHOP WITH US
-    .MainContent {
-        .mainRow-1 {
-            margin: 15%;
-            .mainCol-1 {
 
-                p {
-                    margin: 1rem;
+    .Main {
+        overflow: hidden;
+        .Hero {
+            position: relative;
+            .banner {
+                h1 {
+                    position: absolute;
+                    top: 60%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: rgb(248, 183, 183);
                     text-align: center;
+                    font-size: 3rem;
+                    
+                }
+                .btn {
+                    margin-top: 2rem;
+                    position: absolute;
+                    top: 82%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    padding: .5rem 1rem;
+                    
+                    &:hover {
+                        color: rgb(14, 75, 14);
+                    }
+    
+                    .icon-arrow {
+                        margin-left: .5rem;
+                    }
                 }
             }
-        }    
+        }
+    
+        // MAIN CONTENT - WHY SHOP WITH US
+        .MainContent {
+            .mainRow-1 {
+                margin: 15%;
+                .mainCol-1 {
+                    p {
+                        margin: 1rem;
+                        text-align: center;
+                    }
+                }
+            }    
+        }
     }
 }
 

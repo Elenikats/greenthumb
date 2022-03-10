@@ -7,9 +7,9 @@ import UserContextProvider from "./contexts/userContext.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
-  <UserContextProvider>
-        <App />
-  </UserContextProvider>
+    <UserContextProvider>
+          <App />
+    </UserContextProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );

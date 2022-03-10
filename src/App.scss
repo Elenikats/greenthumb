@@ -2,5 +2,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+
+    .btn {
+        background-color: rgb(116, 197, 170);
+
+        &:hover {
+            color: rgb(9, 70, 9);
+            background-color: rgb(116, 197, 170);
+        }
+    }
+
+    
+    
 }
+
+
 
