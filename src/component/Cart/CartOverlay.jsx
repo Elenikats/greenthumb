@@ -7,7 +7,7 @@ export default function CartOverlay({ shoppingCompleted }) {
   }
 
   return (
-    <div className="CartOverlay">
+    <div className="CartOverlay default-height">
       <img src={thumb} alt="thumbs up" />
       <div className="confirmed">
         <h2>Done !</h2>

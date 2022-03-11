@@ -1,6 +1,6 @@
 export default function Blog() {
   return (
-    <div className="Hero">
+    <div className="Hero default-height">
       <h1>Blog</h1>
     </div>
   );

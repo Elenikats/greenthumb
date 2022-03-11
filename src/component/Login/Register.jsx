@@ -44,7 +44,7 @@ function Register(props) {
   }
 
   return (
-    <section className="registerContainer">
+    <section className="registerContainer default-height">
       <Form onSubmit={handleSubmit} className="registerForm">
         <h1>Registration</h1>
         <Row className="mb-3" xs={1} md={2}>

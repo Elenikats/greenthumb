@@ -1,6 +1,9 @@
 .navbar {
     background-color: rgb(255,244,245);
     padding: 0rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     .navbar-brand {
         img {
             width: 130px;

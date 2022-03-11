@@ -23,7 +23,7 @@ import plant21 from "./plant-photos/plants/hoya-linearis.jpeg";
 const plants = [
   {
     id: 1,
-    name: "Monstera Deliciosa var. Borsigiana Variegata",
+    name: "Monstera deliciosa variegata Halfmoon",
     image: plant1,
     size: "medium",
     price: 300,
@@ -184,7 +184,7 @@ const plants = [
 
   {
     id: 9,
-    name: "CPhilodendron Verrucosum",
+    name: "Philodendron Verrucosum",
     image: plant9,
     size: "medium",
     price: 89,

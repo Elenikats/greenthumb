@@ -83,7 +83,7 @@ export default function Cart({ cart, setCart }) {
 
   if (!shoppingCompleted) {
     return (
-      <Container fluid="lg">
+      <Container fluid="lg" className="default-height">
         <h1>Cart</h1>
         <Row>
           {/* Left side table */}

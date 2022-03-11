@@ -6,7 +6,7 @@ import "./about.scss";
 
 export default function About() {
   return (
-    <section className="secAbout">
+    <section className="About default-height ">
       <Container>
         <Row>
           <Col sm={7}>

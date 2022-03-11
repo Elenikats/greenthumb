@@ -11,7 +11,6 @@ export default function App() {
   const [user, setUser, users, setUsers] = useContext(userContext);
   console.log(user);
   return (
-    // <h2>this is the nav</h2>
     <Navbar collapseOnSelect expand="xs">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <LinkContainer to="/">
@@ -25,6 +24,7 @@ export default function App() {
       </LinkContainer>
       <Nav className="loginAndCartContainer">
         <p className="userName">Hello {user ? user.firstName : ""}</p>
+
         <LinkContainer to="/login">
           <NavLink>
             <FontAwesomeIcon icon={faUser} className="icon icon1" />

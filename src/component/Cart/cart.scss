@@ -1,77 +1,87 @@
-.emptyCart {
-    font-size: 2rem;
-    margin: 6rem;
-}
-
-.table {
-
-    margin-top: 3rem;
-    box-shadow: rgba(39, 90, 19, 0.35) 0px 5px 15px;
-    border-radius: 0.25rem;
-
-
-    .removeBtn {
-        border: none;
-        background-color: white;
-
-        margin-left: 0.3rem;
-
-        &:hover {
-            color: rgb(155, 22, 22);
+.container-lg {
+    .emptyCart {
+        font-size: 2rem;
+        margin: 6rem;
+    }
+    
+    .table {
+    
+        margin-top: 3rem;
+        box-shadow: rgba(39, 90, 19, 0.35) 0px 5px 15px;
+        border-radius: 0.25rem;
+    
+    
+        .removeBtn {
+            border: none;
+            background-color: white;
+    
+            margin-left: 0.3rem;
+    
+            &:hover {
+                color: rgb(155, 22, 22);
+            }
+        }
+    
+        .quantity {
+            font-weight: bold;
+            margin: 0.3em;
+    
+        }
+    
+        .count {
+            color: green;
+            background-color: white;
+            border: none;
+            font-size: 1.3rem;
+            padding: 0.2rem;
+        }
+    
+    
+    }
+    
+    .shippingDetails {
+        box-shadow: rgba(39, 90, 19, 0.35) 0px 5px 15px;
+        border-radius: 0.25rem;
+        padding: 1em;
+        margin-bottom: 1em;
+    
+    
+    
+    }
+    
+    .btn {
+        margin-right: 1rem;
+    }
+    
+    .summary {
+    
+    
+        td {
+            text-align: right;
+        }
+    }
+    
+    .CartOverlay {
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    
+        img {
+            margin: 3rem;
+            width: 250px;
+        }
+    
+        .confirmed {
+            padding-bottom: 2rem;
+    
         }
     }
 
-    .quantity {
-        font-weight: bold;
-        margin: 0.3em;
-
-    }
-
-    .count {
-        color: green;
-        background-color: white;
-        border: none;
-        font-size: 1.3rem;
-        padding: 0.2rem;
-    }
-
-
+//    .Footer {
+//     position: fixed;
+//     bottom: 0;
+//    }
 }
 
-.shippingDetails {
-    box-shadow: rgba(39, 90, 19, 0.35) 0px 5px 15px;
-    border-radius: 0.25rem;
-    padding: 1em;
-    margin-bottom: 1em;
 
 
-
-}
-
-.btn {
-    margin-right: 1rem;
-}
-
-.summary {
-
-
-    td {
-        text-align: right;
-    }
-}
-
-.CartOverlay {
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-
-    img {
-        margin: 3rem;
-        width: 250px;
-    }
-
-    .confirmed {
-        padding-bottom: 2rem;
-
-    }
-}

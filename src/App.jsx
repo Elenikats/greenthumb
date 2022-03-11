@@ -10,7 +10,7 @@ import Main from "./component/Homepage/Main.jsx";
 import Blog from "./component/Blog/Blog.jsx";
 import "./App.scss";
 import Register from "./component/Login/Register.jsx";
-import Footer from "./Footer/Footer.jsx";
+import Footer from "./component/Footer/Footer.jsx";
 import { useState } from "react";
 
 export default function App() {
