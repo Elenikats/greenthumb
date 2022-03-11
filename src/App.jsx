@@ -44,7 +44,17 @@ export default function App() {
           <Route index element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>
-        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              setCart={setCart}
+              counterCart={counterCart}
+              setCounterCart={setCounterCart}
+            />
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

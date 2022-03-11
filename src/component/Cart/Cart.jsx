@@ -17,7 +17,7 @@ import Button from "react-bootstrap/Button";
 
 import CartOverlay from "./CartOverlay.jsx";
 
-export default function Cart({ cart, setCart }) {
+export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
   const cartArray = [
     {
       id: 1,
@@ -68,6 +68,8 @@ export default function Cart({ cart, setCart }) {
   //decrease number or items. If 0 item will be removed
   function decreaseQuantity(product) {
     setCartItem((product.quantity = product.quantity - 1));
+    counterCart == 1 ? setCounterCart("") : setCounterCart(counterCart - 1);
+
     if (product.quantity < 1) {
       {
         handleRemoveItem(product);
@@ -78,6 +80,7 @@ export default function Cart({ cart, setCart }) {
   //increase number of items
   function increaseQuantity(product) {
     setCartItem((product.quantity = product.quantity + 1));
+    setCounterCart(counterCart + 1);
   }
 
   if (!shoppingCompleted) {

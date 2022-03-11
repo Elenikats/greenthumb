@@ -1,8 +1,8 @@
 const users = [
   {
     id: 1,
-    firstName: "angela",
-    lastName: "herrig",
+    firstName: "Angela",
+    lastName: "Herrig",
     email: "angela.k.herrig@gmail.com",
     password: "IlovePlant-5",
     // payment: {
