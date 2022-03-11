@@ -18,30 +18,6 @@ import Button from "react-bootstrap/Button";
 import CartOverlay from "./CartOverlay.jsx";
 
 export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
-  const cartArray = [
-    {
-      id: 1,
-      name: "Monstera Deliciosa var. Borsigiana Variegata",
-      // image: plant1,
-      size: "medium",
-      price: "300",
-      description:
-        "Variegated Monstera Deliciosa var. Borsigiana, a.k.a Monstera albo, with white variegated leaves is probably one of the most sought after plants these days. We have only got a handful of them as they are very hard to get.",
-      quantity: 1,
-    },
-
-    {
-      id: 2,
-      name: ` Alocasia Micholitziana ‘Frydek’ `,
-      // image: plant2,
-      size: "small",
-      price: "25",
-      description:
-        "Alocasia Micholitziana ‘Frydek’ is a rare, glamorous specimen with an elegant touch. The soft velvet leaf texture is complimented by the iconic arrowhead shape. What makes this alocasia unique are the sharp, white veins that dissect the deep green leaves. This is a must have for all true plant lovers.",
-      quantity: 1,
-    },
-  ];
-
   //check if shopping is in progress or done
   const [shoppingCompleted, setShoppingCompleted] = useState(false);
 
@@ -95,52 +71,56 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
                 Cart is empty
               </div>
             )}
-            <Table>
+            <Table className="cartItemsTable">
               <tbody>
                 {cart.map((product) => {
                   return (
                     <tr key={product.id}>
                       <td>
-                        <button
-                          className="removeBtn"
-                          onClick={() => handleRemoveItem(product)}
-                        >
-                          <FontAwesomeIcon
-                            icon={faTrashCan}
-                            className="icon icon1"
-                          />
-                        </button>
+                        <div>
+                          <button
+                            className="removeBtn"
+                            onClick={() => handleRemoveItem(product)}
+                          >
+                            <FontAwesomeIcon
+                              icon={faTrashCan}
+                              className="icon icon1"
+                            />
+                          </button>
+                        </div>
                       </td>
                       <td>
-                        {/* <img
+                        <img
                           src={product.image}
                           alt={product.name}
-                          style={{ width: "100px" }}
-                        /> */}
+                          style={{ width: "4rem" }}
+                        />
                       </td>
                       <td>
-                        <span>{product.name}</span>
+                        <div>{product.name}</div>
                       </td>
                       <td>
-                        <span>{product.price} €</span>
+                        <div>{product.price} €</div>
                       </td>
                       <td>
-                        <button
-                          className="quantity count"
-                          onClick={() => decreaseQuantity(product)}
-                        >
-                          -
-                        </button>
-                        <span className="quantity">{product.quantity}</span>
-                        <button
-                          className="quantity count"
-                          onClick={() => increaseQuantity(product)}
-                        >
-                          +
-                        </button>
+                        <div className="quantityContainer">
+                          <span
+                            className="quantity count"
+                            onClick={() => decreaseQuantity(product)}
+                          >
+                            -
+                          </span>
+                          <span className="quantity">{product.quantity}</span>
+                          <span
+                            className="quantity count"
+                            onClick={() => increaseQuantity(product)}
+                          >
+                            +
+                          </span>
+                        </div>
                       </td>
                       <td>
-                        <span>{product.price * product.quantity} €</span>
+                        <div>{product.price * product.quantity} €</div>
                       </td>
                     </tr>
                   );
@@ -152,7 +132,7 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
           {/* Right side table */}
           {cart.length !== 0 && (
             <Col md={4}>
-              <Table>
+              <Table className="cartItemsTable">
                 <tbody className="summary">
                   <tr>
                     <th>subtotal:</th>
@@ -194,5 +174,11 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
       </Container>
     );
   }
-  return <CartOverlay shoppingCompleted={shoppingCompleted} />;
+  return (
+    <CartOverlay
+      shoppingCompleted={shoppingCompleted}
+      setCounterCart={setCounterCart}
+      setCart={setCart}
+    />
+  );
 }
