@@ -24,7 +24,21 @@ export default function App() {
         <Route path="/products" element={<Products />} />
         <Route path="register" element={<Register />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="login">
+          <Route index element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              setCart={setCart}
+              counterCart={counterCart}
+              setCounterCart={setCounterCart}
+            />
+          }
+        />
         <Route path="*" element={<NotFound />} />
         
       </Routes>
