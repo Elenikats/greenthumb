@@ -71,7 +71,7 @@ export default function Login(props) {
           </Button>{" "}
           {/* <NavLink to="register"> */}
           <Button variant="secondary" onClick={handleClose}>
-            <NavLink to="/register">Register</NavLink>
+            <NavLink to="/login/register">Register</NavLink>
           </Button>
         </Modal.Footer>
       </Modal>

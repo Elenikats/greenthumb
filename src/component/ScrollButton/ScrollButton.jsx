@@ -3,7 +3,7 @@ import { faCircleArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import "./scrollButton.scss";
 
-export default function ScrollToTop() {
+export default function ScrollButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   const changeVisibility = () => {

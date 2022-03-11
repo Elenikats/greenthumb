@@ -27,7 +27,9 @@ export default function Products({
       setCart([...cart, plant]);
     }
     counterCart == "" ? setCounterCart(1) : setCounterCart(counterCart + 1);
+    console.log(counterCart);
   }
+
   return (
     <div className="Products container-fluid d-flex justify-content-center animate__animated animate__fadeIn">
       <Row xs={1} md={2} lg={3}>

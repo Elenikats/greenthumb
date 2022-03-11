@@ -9,9 +9,10 @@ import { userContext } from "../../contexts/userContext.jsx";
 import Login from "../Login/Login.jsx";
 import Register from "../Login/Register";
 
-export default function App() {
+export default function App({ counterCart, setCounterCart }) {
   const [user, setUser, users, setUsers] = useContext(userContext);
   console.log(user);
+
   return (
     <Navbar collapseOnSelect expand="xs">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -26,7 +27,7 @@ export default function App() {
       </LinkContainer>
 
       <Nav className="loginAndCartContainer">
-        <p className="userName">{user.firstName}</p>
+        <p className="userName">Hello {user ? user.firstName : ""}</p>
         {/* <LinkContainer to="/login">
           <NavLink> */}
         <Login />
@@ -38,6 +39,7 @@ export default function App() {
             <FontAwesomeIcon icon={faShoppingBasket} className="icon" />
           </NavLink>
         </LinkContainer>
+        <div className="counterCart">{counterCart}</div>
       </Nav>
 
       {/* Sidebar */}

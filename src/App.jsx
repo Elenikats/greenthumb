@@ -13,6 +13,7 @@ import "./App.scss";
 import Register from "./component/Login/Register.jsx";
 import Footer from "./component/Footer/Footer.jsx";
 import { useState } from "react";
+import ScrollButton from "./component/ScrollButton/ScrollButton.jsx";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -20,7 +21,8 @@ export default function App() {
 
   return (
     <div>
-      <Nav />
+      <Nav counterCart={counterCart} setCounterCart={setCounterCart} />
+      <ScrollButton />
 
       <Routes>
         <Route index element={<Main />}></Route>
@@ -28,7 +30,17 @@ export default function App() {
         <Route path="/about" element={<About />} />
 
         <Route path="products">
-          <Route index element={<Products cart={cart} setCart={setCart} />} />
+          <Route
+            index
+            element={
+              <Products
+                cart={cart}
+                setCart={setCart}
+                counterCart={counterCart}
+                setCounterCart={setCounterCart}
+              />
+            }
+          />
           <Route
             path=":productName"
             element={
