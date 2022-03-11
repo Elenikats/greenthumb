@@ -13,10 +13,13 @@ import Register from "./component/Login/Register.jsx";
 import { useState } from "react";
 
 export default function App() {
+  //Array of all items in the cart
+  const [cart, setCart] = useState([]);
+  const [counterCart, setCounterCart] = useState("");
   return (
     <div>
       <Nav />
-      
+
       <Routes>
         <Route index element={<Main />}></Route>
         <Route path="/home" element={<Main />} />
@@ -40,7 +43,6 @@ export default function App() {
           }
         />
         <Route path="*" element={<NotFound />} />
-        
       </Routes>
     </div>
   );
