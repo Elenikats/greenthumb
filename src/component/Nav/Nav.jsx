@@ -4,18 +4,14 @@ import { faUser, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/Logo_250px.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
-<<<<<<< HEAD
 import { useContext } from "react";
 import { userContext } from '../../contexts/userContext.jsx'
 import Login from "../Login/Login.jsx";
 import Register from "../Login/Register";
-=======
-import { useContext, useState } from "react";
-import { userContext } from "../../contexts/userContext.jsx";
->>>>>>> c83447b4b664fdd25836ed39cb57064e33c04cc3
 
-export default function App({ counterCart, setCounterCart }) {
-  const [user, setUser, users, setUsers] = useContext(userContext);
+export default function App() {
+
+  const [user, setUser, users, setUsers] = useContext(userContext) 
   console.log(user);
   return (
     // <h2>this is the nav</h2>
@@ -32,7 +28,6 @@ export default function App({ counterCart, setCounterCart }) {
       </LinkContainer>
 
       <Nav className="loginAndCartContainer">
-<<<<<<< HEAD
           <p className="userName">{user.firstName}</p>
         {/* <LinkContainer to="/login">
           <NavLink> */}
@@ -40,21 +35,11 @@ export default function App({ counterCart, setCounterCart }) {
           {/* </NavLink>
         </LinkContainer> */}
 
-=======
-        <p className="userName">Hello {user ? user.firstName : ""}</p>
-
-        <LinkContainer to="/login">
-          <NavLink>
-            <FontAwesomeIcon icon={faUser} className="icon icon1" />
-          </NavLink>
-        </LinkContainer>
->>>>>>> c83447b4b664fdd25836ed39cb57064e33c04cc3
         <LinkContainer to="/cart">
           <NavLink>
             <FontAwesomeIcon icon={faShoppingBasket} className="icon" />
           </NavLink>
         </LinkContainer>
-        <div className="counterCart">{counterCart}</div>
       </Nav>
 
       {/* Sidebar */}
