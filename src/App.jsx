@@ -15,8 +15,8 @@ import Footer from "./component/Footer/Footer.jsx";
 import { useState } from "react";
 
 export default function App() {
-  //Array of all items in the cart
   const [cart, setCart] = useState([]);
+  const [counterCart, setCounterCart] = useState("");
 
   return (
     <div>
@@ -26,17 +26,38 @@ export default function App() {
         <Route index element={<Main />}></Route>
         <Route path="/home" element={<Main />} />
         <Route path="/about" element={<About />} />
-        <Route
-          path="/products"
-          element={<Products cart={cart} setCart={setCart} />}
-        />
-        <Route path="/products:name" element={<ProductItem />} />
+
+        <Route path="products">
+          <Route index element={<Products cart={cart} setCart={setCart} />} />
+          <Route
+            path=":productName"
+            element={
+              <ProductItem
+                cart={cart}
+                setCart={setCart}
+                counterCart={counterCart}
+                setCounterCart={setCounterCart}
+              />
+            }
+          />
+        </Route>
+
         <Route path="/blog" element={<Blog />} />
         <Route path="login">
           <Route index element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>
-        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              setCart={setCart}
+              counterCart={counterCart}
+              setCounterCart={setCounterCart}
+            />
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

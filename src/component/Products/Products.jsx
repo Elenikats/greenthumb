@@ -7,7 +7,13 @@ import plants from "../../plants.js";
 import { NavLink } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
-export default function Products({ cart, setCart }) {
+// console.log(plants);
+export default function Products({
+  cart,
+  setCart,
+  counterCart,
+  setCounterCart,
+}) {
   function handleShopping(plant) {
     const exist = cart.find((item) => item.id === plant.id);
     const cartWithFilteredOutTheOneThatIFound = cart.filter(
@@ -20,13 +26,17 @@ export default function Products({ cart, setCart }) {
     } else {
       setCart([...cart, plant]);
     }
+    counterCart == "" ? setCounterCart(1) : setCounterCart(counterCart + 1);
   }
   return (
     <div className="Products container-fluid d-flex justify-content-center animate__animated animate__fadeIn">
       <Row xs={1} md={2} lg={3}>
         {plants.map((plant) => {
           return (
-            <Col className="container-fluid d-flex justify-content-center  ">
+            <Col
+              key={plant.id}
+              className="container-fluid d-flex justify-content-center  "
+            >
               <Card>
                 <LinkContainer to={`/products/${plant.name}`}>
                   <NavLink>

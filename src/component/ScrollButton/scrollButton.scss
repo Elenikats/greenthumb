@@ -1,0 +1,16 @@
+.icon-scrollUp {
+    background-color: none;
+    border: none;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    cursor: pointer;
+    color: rgb(66, 114, 96);
+
+    &:hover {
+        color: #74c5aa;
+    }
+}
