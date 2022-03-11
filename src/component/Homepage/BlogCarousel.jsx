@@ -16,7 +16,6 @@ export default function BlogCarousel() {
             <Carousel.Caption>
               <h5>Jungle vibes</h5>
               <p>
-                {" "}
                 Just a couple of plants are not enough for you? Are you going
                 more for the jungle look? This guide is all you need!
               </p>

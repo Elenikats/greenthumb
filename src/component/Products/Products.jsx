@@ -10,14 +10,36 @@ import plants from "../../plants.js";
 // import {plantFolder} from "./config.js"
 // console.log(plantFolder);
 
-console.log(plants);
-export default function Products() {
+// console.log(plants);
+export default function Products({
+  cart,
+  setCart,
+  counterCart,
+  setCounterCart,
+}) {
+  function handleShopping(plant) {
+    const exist = cart.find((item) => item.id === plant.id);
+    const cartWithFilteredOutTheOneThatIFound = cart.filter(
+      (item) => item.id !== plant.id
+    );
+
+    if (exist) {
+      exist.quantity += 1;
+      setCart([...cartWithFilteredOutTheOneThatIFound, exist]);
+    } else {
+      setCart([...cart, plant]);
+    }
+    counterCart == "" ? setCounterCart(1) : setCounterCart(counterCart + 1);
+  }
   return (
     <div className="Products container-fluid d-flex justify-content-center animate__animated animate__fadeIn">
       <Row xs={1} md={2} lg={3}>
         {plants.map((plant) => {
           return (
-            <Col className="container-fluid d-flex justify-content-center ">
+            <Col
+              key={plant.id}
+              className="container-fluid d-flex justify-content-center  "
+            >
               <Card>
                 <div
                   style={{
@@ -25,17 +47,24 @@ export default function Products() {
                     height: "60vh",
                     backgroundImage: `url(${plant.image})`,
                     backgroundPosition: "center",
-                    backgroundSize: "contain",
+                    backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                   }}
                 />
 
                 <Card.Body>
-                  <Card.Title>{plant.name}</Card.Title>
-                  <h6>{plant.price} €</h6>
                   {/* <Card.Text>{plant.description}</Card.Text> */}
+                  <div>
+                    <Card.Title>{plant.name}</Card.Title>
+                    <h6>{plant.price} €</h6>
+                  </div>
                   <div className="button-buy">
-                    <Button variant="success">Buy now</Button>
+                    <Button
+                      onClick={() => handleShopping(plant)}
+                      variant="success"
+                    >
+                      Buy now
+                    </Button>
                   </div>
                 </Card.Body>
               </Card>

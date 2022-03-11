@@ -5,13 +5,10 @@
         padding: 2rem;
 
         .card-body {
+            padding: 1.4rem 0;
             .button-buy {
                 display: flex;
-                flex-direction: row-reverse;
-                .btn {
-                    background-color: rgb(102, 161, 99);
-                }
-                
+                flex-direction: row-reverse;  
             }
         }
 
