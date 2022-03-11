@@ -60,7 +60,8 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
 
   //delete an item
   function handleRemoveItem(product) {
-    console.log("whats product", product.id);
+    setCounterCart((counterCart = counterCart - product.quantity));
+    counterCart <= 0 ? setCounterCart("") : setCounterCart(counterCart);
     const filtered = cart.filter((item) => item.id !== product.id);
     setCart(filtered);
   }
@@ -71,9 +72,8 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
     counterCart == 1 ? setCounterCart("") : setCounterCart(counterCart - 1);
 
     if (product.quantity < 1) {
-      {
-        handleRemoveItem(product);
-      }
+      const filtered = cart.filter((item) => item.id !== product.id);
+      setCart(filtered);
     }
   }
 
