@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Nav from "./component/Nav/Nav.jsx";
 import About from "./component/About/About.jsx";
 import Products from "./component/Products/Products.jsx";
+import ProductItem from "./component/ProductItem/ProductItem.jsx";
 import NotFound from "./component/NotFound.jsx";
 import Cart from "./component/Cart/Cart.jsx";
 import Login from "./component/Login/Login.jsx";
@@ -29,6 +30,7 @@ export default function App() {
           path="/products"
           element={<Products cart={cart} setCart={setCart} />}
         />
+        <Route path="/products:name" element={<ProductItem />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="login">
           <Route index element={<Login />} />

@@ -2,15 +2,11 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import CardGroup from "react-bootstrap/CardGroup";
 import "./products.scss";
-import image1 from "../../plant-photos/plants/albo-monstera.jpeg";
-
 import plants from "../../plants.js";
-// import {plantFolder} from "./config.js"
-// console.log(plantFolder);
+import { NavLink } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
-// console.log(plants);
 export default function Products({ cart, setCart }) {
   function handleShopping(plant) {
     const exist = cart.find((item) => item.id === plant.id);
@@ -32,16 +28,20 @@ export default function Products({ cart, setCart }) {
           return (
             <Col className="container-fluid d-flex justify-content-center  ">
               <Card>
-                <div
-                  style={{
-                    width: "100%",
-                    height: "60vh",
-                    backgroundImage: `url(${plant.image})`,
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                />
+                <LinkContainer to={`/products/${plant.name}`}>
+                  <NavLink>
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "60vh",
+                        backgroundImage: `url(${plant.image})`,
+                        backgroundPosition: "center",
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    />
+                  </NavLink>
+                </LinkContainer>
 
                 <Card.Body>
                   {/* <Card.Text>{plant.description}</Card.Text> */}
