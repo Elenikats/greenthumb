@@ -4,11 +4,14 @@ import { faUser, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/Logo_250px.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
-import { useContext, useState } from "react";
-import { userContext } from "../../contexts/userContext.jsx";
+import { useContext } from "react";
+import { userContext } from '../../contexts/userContext.jsx'
+import Login from "../Login/Login.jsx";
+import Register from "../Login/Register";
 
-export default function App({ counterCart, setCounterCart }) {
-  const [user, setUser, users, setUsers] = useContext(userContext);
+export default function App() {
+
+  const [user, setUser, users, setUsers] = useContext(userContext) 
   console.log(user);
   return (
     // <h2>this is the nav</h2>
@@ -23,20 +26,20 @@ export default function App({ counterCart, setCounterCart }) {
           />
         </Navbar.Brand>
       </LinkContainer>
-      <Nav className="loginAndCartContainer">
-        <p className="userName">Hello {user ? user.firstName : ""}</p>
 
-        <LinkContainer to="/login">
-          <NavLink>
-            <FontAwesomeIcon icon={faUser} className="icon icon1" />
-          </NavLink>
-        </LinkContainer>
+      <Nav className="loginAndCartContainer">
+          <p className="userName">{user.firstName}</p>
+        {/* <LinkContainer to="/login">
+          <NavLink> */}
+            <Login />
+          {/* </NavLink>
+        </LinkContainer> */}
+
         <LinkContainer to="/cart">
           <NavLink>
             <FontAwesomeIcon icon={faShoppingBasket} className="icon" />
           </NavLink>
         </LinkContainer>
-        <div className="counterCart">{counterCart}</div>
       </Nav>
 
       {/* Sidebar */}
@@ -60,18 +63,6 @@ export default function App({ counterCart, setCounterCart }) {
           <LinkContainer to="/plantdoctor">
             <Nav.Link>Plant-doctor</Nav.Link>
           </LinkContainer>
-
-          {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
