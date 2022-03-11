@@ -4,8 +4,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import "./register.scss"
-import userArray from '../../user.js'
 import { userContext } from '../../contexts/userContext';
+import CloseButton from 'react-bootstrap/CloseButton'
 
 function Register(props) {
     const firstNameRef = useRef()
@@ -17,6 +17,8 @@ function Register(props) {
     const zipRef = useRef()
 
     const [user, setUser, users, setUsers] = useContext(userContext) 
+    const handleClose = () => setShow(false);
+
 
     console.log([...users]);
 
@@ -50,15 +52,18 @@ function Register(props) {
     <section className="registerContainer">
     <Form onSubmit={handleSubmit} className="registerForm">
         <h1>Registration</h1>
+        <a href="/">Home</a>
+        {/* <CloseButton aria-label="Hide" onClick={handleClose} /> */}
+
   <Row className="mb-3" xs={1} md={2}>
   <Form.Group as={Col} controlId="formGridFirstName">
       <Form.Label>First name</Form.Label>
-      <Form.Control type="text" placeholder="First name" ref={firstNameRef} />
+      <Form.Control type="name" placeholder="First name" ref={firstNameRef} />
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridLastName">
       <Form.Label>Last name</Form.Label>
-      <Form.Control type="text" placeholder="Last name" ref={lastNameRef} />
+      <Form.Control type="name" placeholder="Last name" ref={lastNameRef} />
     </Form.Group>
   </Row>
 
@@ -98,6 +103,7 @@ function Register(props) {
   <Button variant="success" type="submit">
     Submit
   </Button>
+ 
 </Form>
 </section>
     )

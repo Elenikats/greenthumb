@@ -9,22 +9,21 @@ import Login from "./component/Login/Login.jsx";
 import Main from "./component/Homepage/Main.jsx";
 import Blog from "./component/Blog/Blog.jsx";
 import "./App.scss";
-import Register from "./component/Login/Register.jsx"
+import Register from "./component/Login/Register.jsx";
+import { useState } from "react";
 
 export default function App() {
   return (
     <div>
       <Nav />
+      
       <Routes>
         <Route index element={<Main />}></Route>
         <Route path="/home" element={<Main />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
+        <Route path="register" element={<Register />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="login">
-        <Route index  element={<Login />} />
-            <Route path="register" element={<Register />} />
-        </Route>
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
         
