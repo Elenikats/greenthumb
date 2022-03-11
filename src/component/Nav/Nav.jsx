@@ -5,16 +5,15 @@ import Logo from "../../assets/Logo_250px.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
 import { useContext } from "react";
-import { userContext } from '../../contexts/userContext.jsx'
+import { userContext } from "../../contexts/userContext.jsx";
 import Login from "../Login/Login.jsx";
 import Register from "../Login/Register";
 
-export default function App() {
-
-  const [user, setUser, users, setUsers] = useContext(userContext) 
+export default function App({ counterCart, setCounterCart }) {
+  const [user, setUser, users, setUsers] = useContext(userContext);
   console.log(user);
+
   return (
-    // <h2>this is the nav</h2>
     <Navbar collapseOnSelect expand="xs">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <LinkContainer to="/">
@@ -28,11 +27,11 @@ export default function App() {
       </LinkContainer>
 
       <Nav className="loginAndCartContainer">
-          <p className="userName">{user.firstName}</p>
+        <p className="userName">Hello {user ? user.firstName : ""}</p>
         {/* <LinkContainer to="/login">
           <NavLink> */}
-            <Login />
-          {/* </NavLink>
+        <Login />
+        {/* </NavLink>
         </LinkContainer> */}
 
         <LinkContainer to="/cart">
@@ -40,6 +39,7 @@ export default function App() {
             <FontAwesomeIcon icon={faShoppingBasket} className="icon" />
           </NavLink>
         </LinkContainer>
+        <div className="counterCart">{counterCart}</div>
       </Nav>
 
       {/* Sidebar */}

@@ -1,6 +1,9 @@
 .navbar {
     background-color: rgb(255, 244, 245);
     padding: 0rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 
     .navbar-brand {
         img {
@@ -11,7 +14,7 @@
 
     .navbar-toggler {
         background-color: rgb(188, 224, 212);
-        color: rgb(66, 114, 96);
+        color: rgb(102, 158, 138);
 
     }
 
@@ -25,9 +28,8 @@
         }
 
         .icon {
-            color: rgb(66, 114, 96);
+            color: rgb(116, 197, 170);
             font-size: 1.4rem;
-
         }
 
         .icon1 {

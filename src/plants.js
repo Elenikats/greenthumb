@@ -23,7 +23,7 @@ import plant21 from "./plant-photos/plants/hoya-linearis.jpeg";
 const plants = [
   {
     id: 1,
-    name: "Monstera Deliciosa var. Borsigiana Variegata",
+    name: "Monstera deliciosa variegata Halfmoon",
     image: plant1,
     size: "medium",
     price: 300,
@@ -34,7 +34,7 @@ const plants = [
 
   {
     id: 2,
-    name: ` Alocasia Micholitziana ‘Frydek’ `,
+    name: ` Alocasia Micholitziana Frydek`,
     image: plant2,
     size: "small",
     price: 25,
@@ -60,34 +60,34 @@ const plants = [
     image: plant14,
     size: "medium",
     price: 55,
-    description: "",
+    description: "Anthurium Clarinervium is a very interesting plant which unlike other Anthuriums is grown for its thick, green, heart-shaped & leather-like leaves with bright coloured veins. It’s a spectacular plant from Araceae family, endemic to Mexico which grows naturally as an epiphyte.",
     quantity: 1,
   },
   {
     id: 15,
-    name: "Jewel Orchid",
+    name: "Macodes Petola Gold",
     image: plant15,
     size: "small",
     price: 13,
-    description: "",
+    description: "Macodes Petola Gold is a jewel orchid with leaves that look as if they are covered in lightnings! Different to the normal Macodes Petola, Macodes Petola Gold has leaves with a brownish green hue and prominent golden veins instead of silver, netting the leaf surface.",
     quantity: 1,
   },
   {
     id: 16,
-    name: "Philodendron Micans",
+    name: "Philodendron hederaceum",
     image: plant16,
     size: "medium",
     price: 25,
-    description: "",
+    description: "Philodendron hederaceum var hederaceum is one of our favourite Aroids due to its gorgeous, velvety leaves! Also known as Philodendron Micans, new leaves on this plant will be light brown to bright green in colour, but mature into an iridescent deep green with a brown hue.",
     quantity: 1,
   },
   {
     id: 17,
-    name: "Pink Princess",
+    name: "Philodendron Pink Princess",
     image: plant17,
     size: "medium",
     price: 235,
-    description: "",
+    description: "Philodendron Pink Princess is a terrific climbing Aroid with dark leaves and light pink variegated blotches. It is one of the most popular houseplants these days and for good reason: This Aroid is as beautiful as it is easy to care for!",
     quantity: 1,
   },
   {
@@ -96,25 +96,25 @@ const plants = [
     image: plant18,
     size: "medium",
     price: 15,
-    description: "",
+    description: "The String of Turtles, also known as Peperomia Prostrata, thanks its name to the small leaves resembling a turtle shell. It is one of the most interesting patterns in plants we have ever seen and it will grow into a rain of mesmerizing leaves.",
     quantity: 1,
   },
   {
     id: 19,
-    name: "White Princess",
+    name: "Philodendron White Knight",
     image: plant19,
     size: "medium",
     price: 180,
-    description: "",
+    description: "Philodendron White Knight is a highly sought-after Aroid with lush green, round leaves that feature beautiful sectoral and speckled, white variegation. This is a true must-have for lovers of rare plants and variegation!",
     quantity: 1,
   },
   {
     id: 20,
-    name: "Fern asparagus",
+    name: "Plumosa Fern asparagus",
     image: plant20,
     size: "medium",
     price: 18,
-    description: "",
+    description: "Plumosa Asparagus Fern is a delicate plant with graceful feathery and fern-like foliage. The plant can be used in many elegant floral arrangements and home decoration. Plumosa fern is not a fern. It belongs to the asparagus family. It is very easy to care for.",
     quantity: 1,
   },
   {
@@ -123,7 +123,7 @@ const plants = [
     image: plant21,
     size: "medium",
     price: 30,
-    description: "",
+    description: "Hoya linearis is a tender, pendent, epiphytic, succulent, evergreen perennial with slender, soft, green stems bearing linear, hairy, grooved leaves and lax clusters of fragrant, star-shaped, white flowers from late summer into autumn.",
     quantity: 1,
   },
 
@@ -184,7 +184,7 @@ const plants = [
 
   {
     id: 9,
-    name: "CPhilodendron Verrucosum",
+    name: "Philodendron Verrucosum",
     image: plant9,
     size: "medium",
     price: 89,
@@ -217,7 +217,7 @@ const plants = [
 
   {
     id: 12,
-    name: "Scindapsus Pictus ‘Exotica’",
+    name: "Scindapsus Pictus Exotica",
     image: plant12,
     size: "medium",
     price: 9,

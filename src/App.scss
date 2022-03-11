@@ -3,15 +3,34 @@
     padding: 0;
     box-sizing: border-box;
 
-
-    .btn {
-        background-color: rgb(116, 197, 170);
-
-        &:hover {
-            color: rgb(9, 70, 9);
-            background-color: rgb(116, 197, 170);
-        }
+    html {
+        min-height: 100%;
     }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin: auto 0;
+        .btn {
+            background-color: rgb(116, 197, 170);
+    
+            &:hover {
+                color: rgb(9, 70, 9);
+                background-color: rgb(116, 197, 170);
+            }
+
+        }
+
+        .default-height {
+            min-height: calc(100vh - 140px - 123.14px);
+        }
+
+    }
+
+
+
+
 
     
     
