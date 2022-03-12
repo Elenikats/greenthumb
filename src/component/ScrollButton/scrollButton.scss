@@ -14,3 +14,12 @@
         color: #74c5aa;
     }
 }
+
+@media screen and (max-width: 786px) {
+    .icon-scrollUp {
+        width: 20px;
+        height: 20px;
+        z-index: 100;
+    }
+
+}

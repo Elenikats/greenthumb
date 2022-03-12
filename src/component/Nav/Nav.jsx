@@ -1,6 +1,10 @@
 import { Nav, Navbar, NavLink, NavDropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faShoppingBasket,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/Logo_250px.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
@@ -8,7 +12,7 @@ import { useContext } from "react";
 import { userContext } from "../../contexts/userContext.jsx";
 import Login from "../Login/Login.jsx";
 import Register from "../Login/Register";
-
+import Search from "../Search/Search";
 export default function App({ counterCart, setCounterCart }) {
   const [user, setUser, users, setUsers] = useContext(userContext);
   console.log(user);
@@ -16,6 +20,7 @@ export default function App({ counterCart, setCounterCart }) {
   return (
     <Navbar collapseOnSelect expand="xs">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
       <LinkContainer to="/">
         <Navbar.Brand>
           <img
@@ -27,12 +32,15 @@ export default function App({ counterCart, setCounterCart }) {
       </LinkContainer>
 
       <Nav className="loginAndCartContainer">
+        <NavLink>
+          <Search />
+        </NavLink>
+
         <p className="userName">Hello {user ? user.firstName : ""}</p>
-        {/* <LinkContainer to="/login">
-          <NavLink> */}
-        <Login />
-        {/* </NavLink>
-        </LinkContainer> */}
+
+        <NavLink>
+          <Login />
+        </NavLink>
 
         <LinkContainer to="/cart">
           <NavLink>

@@ -6,9 +6,9 @@
     z-index: 10;
 
     .navbar-brand {
+        margin-left: 3rem;
         img {
-            width: 150px;
-            // height: 130px;
+            width: 130px;
         }
     }
 
@@ -40,6 +40,49 @@
     .counterCart {
         color: rgb(66, 114, 96);
         font-weight: bold;
+        padding-left: 0.3rem;
 
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 786px) {
+    .navbar {
+        padding: 0rem 1.5rem;
+
+        .navbar-toggler {
+            padding: .4rem .5rem;
+            font-size: .8rem;
+        }
+
+        .navbar-brand {
+            margin-left: 1rem;
+            img {
+                width: 100px;
+            }
+        }
+    
+        .loginAndCartContainer {
+    
+            .userName {
+                display: none;
+            }
+    
+            .icon {
+                font-size: 1.2rem;
+            }
+    
+        }
+    
+        .counterCart {
+            color: rgb(62, 116, 96);
+            font-weight: bold;
+            font-size: 12px;
+
+        }
     }
 }

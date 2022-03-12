@@ -6,6 +6,8 @@ import "./products.scss";
 import plants from "../../plants.js";
 import { NavLink } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 // console.log(plants);
 export default function Products({
@@ -56,17 +58,17 @@ export default function Products({
                 </LinkContainer>
 
                 <Card.Body>
-                  {/* <Card.Text>{plant.description}</Card.Text> */}
                   <div>
                     <Card.Title>{plant.name}</Card.Title>
                     <h6>{plant.price} €</h6>
                   </div>
-                  <div className="button-buy">
+                  <div className="button-quick-add">
                     <Button
                       onClick={() => handleShopping(plant)}
                       variant="success"
                     >
-                      Buy now
+                      <FontAwesomeIcon icon={faPlus} className="icon-plus" />
+                      Quick Add
                     </Button>
                   </div>
                 </Card.Body>

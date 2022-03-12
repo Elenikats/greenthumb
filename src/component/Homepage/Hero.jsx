@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import cat from "../../plant-photos/homepage-decor/cat.jpeg";
 
 export default function Hero() {
   return (
     <div className="Hero">
       <div
+        className="animate__animated animate__fadeIn"
         style={{
           width: "100vw",
           height: "86vh",
