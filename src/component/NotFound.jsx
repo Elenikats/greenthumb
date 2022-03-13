@@ -8,7 +8,10 @@ export default function NotFound() {
       {search ? (
         <h1>"{search}" not found!</h1>
       ) : (
-        <h1>Thumbs Down, page not found!</h1>
+        <div>
+          <h1>Thumbs Down, page not found!</h1>
+          <p>&#127807; &#127802; &#127796; </p>
+        </div>
       )}
     </div>
   );

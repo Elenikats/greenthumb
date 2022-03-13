@@ -43,6 +43,7 @@
         h1 {
             text-align: center;
             margin-top: 2rem;
+            color: rgb(116, 197, 170);
         }
         
         .flex-carousel-container {
@@ -61,8 +62,11 @@
                     border-radius: 5%;
 
                     .carousel-caption {
+                        h5 {
+                            font-size: 1.5rem;
+                        }
                         color: white;
-                        background-color: rgba(124, 170, 102, 0.801);
+                        background-color: rgba(102, 202, 169, 0.411);;
                     }
 
                 // .carousel-control-prev-icon {
@@ -124,11 +128,6 @@
             }  
         }    
     }
-
-    // .Footer {
-    //     position: sticky;
-    //     bottom: 0;
-    // }
 }
 
 
@@ -154,37 +153,19 @@
 @media screen and (max-width: 768px) {
 
     .Main {
-        overflow: hidden;
         .Hero {
-            position: relative;
             .banner {
                 h1 {
-                    position: absolute;
                     top: 60%;
                     left: 50%;
-                    transform: translate(-50%, -50%);
-                    color: rgb(248, 183, 183);
-                    text-align: center;
-                    font-size: 3rem;
-                    
                 }
                 
                 a {
                     .btn {
                         margin-top: 2rem;
-                        position: absolute;
                         top: 82%;
                         left: 50%;
-                        transform: translate(-50%, -50%);
                         padding: .5rem 1rem;
-                        
-                        &:hover {
-                            color: rgb(14, 75, 14);
-                        }
-        
-                        .icon-arrow {
-                            margin-left: .5rem;
-                        }
                     }
                 }
             }
@@ -205,3 +186,47 @@
     }
 }
 
+
+@media screen and (max-width: 768px) {
+    // Hero
+    .Main {
+        .Hero {
+            .banner {
+                h1 {
+                    top: 55%;
+                    left: 50%;
+                }
+                
+                a {
+                    .btn {
+                        margin-top: 2rem;
+                        top: 82%;
+                        left: 50%;
+                        padding: .5rem 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    // carousel - blog
+    .Main {
+        .BlogCarousel {
+            margin: 5rem 1rem;
+            .flex-carousel-container {
+                .carousel {
+                    .carousel-inner {
+                        .carousel-caption {
+                            h5 {
+                                font-size: .9rem;
+                            }
+                            p {
+                                font-size: .8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

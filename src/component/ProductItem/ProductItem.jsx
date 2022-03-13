@@ -50,12 +50,20 @@ export default function ProductItem({
 
           <Col md={6}>
             <h2>{plantObject.name}</h2>
-            <p>{plantObject.price} €</p>
+            <p>
+              {" "}
+              <b>{plantObject.price} € </b>
+            </p>
             <p>{plantObject.description}</p>
-            <p>{plantObject.size} size</p>
-            <Button onClick={handleShopping} variant="success">
-              Add To Cart
-            </Button>
+            <p>
+              {" "}
+              size: <i>{plantObject.size} </i>
+            </p>
+            <div className="btn-addtocart-container">
+              <Button onClick={handleShopping} variant="success">
+                Add To Cart
+              </Button>
+            </div>
           </Col>
         </Row>
       </Container>

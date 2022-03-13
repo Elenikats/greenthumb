@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faX } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import plants from "../../plants.js";
-import ProductItem from "../ProductItem/ProductItem.jsx";
 import { searchContext } from "../../contexts/searchContext.js";
 import { useContext } from "react";
 import "./search.scss";
@@ -26,7 +25,7 @@ export default function Search() {
     setSearch(e.target.value);
     navigate("/products");
     const filteredProducts = allProducts.filter((plant) =>
-      plant.name.toLowerCase().includes(e.target.value.toLowerCase())
+      plant.name.toLowerCase().includes(search.toLowerCase())
     );
     if (e.target.value == "") {
       setAllProducts(plants);
