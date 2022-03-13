@@ -24,7 +24,6 @@ export default function App() {
       <Nav counterCart={counterCart} setCounterCart={setCounterCart} />
       <ScrollButton />
 
-
       <Routes>
         <Route index element={<Main />}></Route>
         <Route path="/home" element={<Main />} />

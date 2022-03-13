@@ -20,7 +20,7 @@ export default function ProductItem({
   console.log(plantObject);
 
   // FUNCTION THAT ADDS THE PLANT TO THE CART
-  function handleShopping(plant) {
+  function handleShopping() {
     const exist = cart.find((item) => item.id === plantObject.id);
     const cartWithFilteredOutTheOneThatIFound = cart.filter(
       (item) => item.id !== plantObject.id
@@ -41,13 +41,9 @@ export default function ProductItem({
         <Row>
           <Col md={6}>
             <div
+              className="plant-img"
               style={{
-                width: "100%",
-                height: "60vh",
                 backgroundImage: `url(${plantObject.image})`,
-                backgroundPosition: "center",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
               }}
             ></div>
           </Col>
@@ -58,7 +54,7 @@ export default function ProductItem({
             <p>{plantObject.description}</p>
             <p>{plantObject.size} size</p>
             <Button onClick={handleShopping} variant="success">
-              ADD TO CART
+              Add To Cart
             </Button>
           </Col>
         </Row>

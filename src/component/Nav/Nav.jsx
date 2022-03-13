@@ -1,6 +1,10 @@
 import { Nav, Navbar, NavLink, NavDropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faShoppingBasket,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/Logo_250px.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
@@ -8,38 +12,53 @@ import { useContext } from "react";
 import { userContext } from "../../contexts/userContext.jsx";
 import Login from "../Login/Login.jsx";
 import Register from "../Login/Register";
+import Search from "../Search/Search.jsx";
+import { searchContext } from "../../contexts/searchContext";
 
 export default function App({ counterCart, setCounterCart }) {
   const [user, setUser, users, setUsers] = useContext(userContext);
+  const [search, setSearch, filteredItems, setFilteredItems] =
+    useContext(searchContext);
   console.log(user);
 
   return (
     <Navbar collapseOnSelect expand="xs">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
       <LinkContainer to="/">
         <Navbar.Brand>
-          <img
-            src={Logo}
-            alt="logo"
-            className="animate__animated animate__slideInDown"
-          />
+          <div className="image">
+            <img
+              src={Logo}
+              alt="logo"
+              className="animate__animated animate__slideInDown"
+            />
+          </div>
         </Navbar.Brand>
       </LinkContainer>
 
       <Nav className="loginAndCartContainer">
         <p className="userName">Hello {user ? user.firstName : ""}</p>
-        {/* <LinkContainer to="/login">
-          <NavLink> */}
-        <Login />
-        {/* </NavLink>
-        </LinkContainer> */}
+
+        <NavLink>
+          <Login />
+        </NavLink>
 
         <LinkContainer to="/cart">
           <NavLink>
             <FontAwesomeIcon icon={faShoppingBasket} className="icon" />
           </NavLink>
         </LinkContainer>
-        <div className="counterCart">{counterCart}</div>
+        <div
+          className="counterCart"
+          style={{ width: ".1rem", paddingRight: ".2rem" }}
+        >
+          {counterCart}
+        </div>
+
+        <NavLink>
+          <Search />
+        </NavLink>
       </Nav>
 
       {/* Sidebar */}
