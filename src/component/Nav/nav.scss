@@ -4,19 +4,25 @@
     position: sticky;
     top: 0;
     z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 
-    .navbar-brand {
-        margin-left: 3rem;
-        img {
-            width: 130px;
-        }
-    }
 
     .navbar-toggler {
         background-color: rgb(188, 224, 212);
         color: rgb(102, 158, 138);
 
     }
+
+    .navbar-brand {
+        width: 2%;
+            img {
+
+                width: 130px;
+            }
+    }
+
 
     .loginAndCartContainer {
         display: flex;
@@ -35,13 +41,13 @@
         .icon1 {
             margin-right: 1rem;
         }
+
+
     }
 
     .counterCart {
         color: rgb(66, 114, 96);
         font-weight: bold;
-        padding-left: 0.3rem;
-
     }
 }
 

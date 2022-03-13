@@ -14,6 +14,7 @@ import Register from "./component/Login/Register.jsx";
 import Footer from "./component/Footer/Footer.jsx";
 import { useState } from "react";
 import ScrollButton from "./component/ScrollButton/ScrollButton.jsx";
+import Search from "./component/Search/Search.jsx";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -23,7 +24,6 @@ export default function App() {
     <div>
       <Nav counterCart={counterCart} setCounterCart={setCounterCart} />
       <ScrollButton />
-
 
       <Routes>
         <Route index element={<Main />}></Route>

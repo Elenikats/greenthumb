@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import cat from "../../plant-photos/homepage-decor/cat.jpeg";
 
 export default function Hero() {
   return (

@@ -12,9 +12,13 @@ import { useContext } from "react";
 import { userContext } from "../../contexts/userContext.jsx";
 import Login from "../Login/Login.jsx";
 import Register from "../Login/Register";
-import Search from "../Search/Search";
+import Search from "../Search/Search.jsx";
+import { searchContext } from "../../contexts/searchContext";
+
 export default function App({ counterCart, setCounterCart }) {
   const [user, setUser, users, setUsers] = useContext(userContext);
+  const [search, setSearch, filteredItems, setFilteredItems] =
+    useContext(searchContext);
   console.log(user);
 
   return (
@@ -23,19 +27,17 @@ export default function App({ counterCart, setCounterCart }) {
 
       <LinkContainer to="/">
         <Navbar.Brand>
-          <img
-            src={Logo}
-            alt="logo"
-            className="animate__animated animate__slideInDown"
-          />
+          <div className="image">
+            <img
+              src={Logo}
+              alt="logo"
+              className="animate__animated animate__slideInDown"
+            />
+          </div>
         </Navbar.Brand>
       </LinkContainer>
 
       <Nav className="loginAndCartContainer">
-        <NavLink>
-          <Search />
-        </NavLink>
-
         <p className="userName">Hello {user ? user.firstName : ""}</p>
 
         <NavLink>
@@ -48,6 +50,10 @@ export default function App({ counterCart, setCounterCart }) {
           </NavLink>
         </LinkContainer>
         <div className="counterCart">{counterCart}</div>
+
+        <NavLink>
+          <Search />
+        </NavLink>
       </Nav>
 
       {/* Sidebar */}

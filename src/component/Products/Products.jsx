@@ -8,6 +8,8 @@ import { NavLink } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { searchContext } from "../../contexts/searchContext.js";
+import { useContext } from "react";
 
 // console.log(plants);
 export default function Products({
@@ -16,6 +18,9 @@ export default function Products({
   counterCart,
   setCounterCart,
 }) {
+  const [search, setSearch, filteredItems, setFilteredItems] =
+    useContext(searchContext);
+
   function handleShopping(plant) {
     const exist = cart.find((item) => item.id === plant.id);
     const cartWithFilteredOutTheOneThatIFound = cart.filter(

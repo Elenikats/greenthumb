@@ -1,0 +1,35 @@
+.Search {
+    position: relative;
+    .input-icon-container {
+        display: flex;
+        
+        .icon-container {
+            
+        }
+        .input-hide {
+            display: none;
+        }
+    
+        .input-show {
+            display: block;
+            position: absolute;
+            right: 1.6rem;
+
+        }
+    }
+
+    .icon-search, .icon-x {
+        padding-left:1rem;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .Search {
+        .input-icon-container {
+            .input-show {
+
+                width: 6rem;
+            }
+        }
+    }
+}
