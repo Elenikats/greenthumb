@@ -8,9 +8,6 @@ import { useContext } from "react";
 import "./search.scss";
 import { useNavigate } from "react-router-dom";
 
-import { Nav, Navbar, NavLink, NavDropdown } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
-
 ////////////////////////////////////////
 
 export default function Search() {
@@ -19,23 +16,28 @@ export default function Search() {
   const [displayInputField, setDisplayInputField] = useState(false);
   const navigate = useNavigate();
 
-  console.log(search);
-  console.log(plants);
+  // console.log(plants);
 
   const handleDisplay = () => {
     setDisplayInputField(!displayInputField);
   };
 
   const handleSearchProduct = (e) => {
+    setSearch(e.target.value);
     navigate("/products");
     const filteredProducts = allProducts.filter((plant) =>
       plant.name.toLowerCase().includes(e.target.value.toLowerCase())
     );
     if (e.target.value == "") {
       setAllProducts(plants);
+    } else if (!allProducts.length) {
+      navigate("/notfound");
     } else {
       setAllProducts(filteredProducts);
     }
+    console.log(filteredProducts.length);
+    console.log(e.target.value);
+    console.log(allProducts.length);
   };
 
   return (
@@ -47,7 +49,6 @@ export default function Search() {
             top: "120%",
             right: "-3%",
             opacity: displayInputField ? "1" : "0",
-            // display: !displayInputField ? displayNone : displayBlockToNone,
           }}
           type="text"
           placeholder="Search..."
@@ -59,17 +60,21 @@ export default function Search() {
           }
         />
         {displayInputField ? (
-          <FontAwesomeIcon
-            icon={faX}
-            className="icon icon-x"
-            onClick={handleDisplay}
-          />
+          <div style={{ width: "2rem" }}>
+            <FontAwesomeIcon
+              icon={faX}
+              className="icon icon-x"
+              onClick={handleDisplay}
+            />
+          </div>
         ) : (
-          <FontAwesomeIcon
-            icon={faMagnifyingGlass}
-            className="icon-search icon"
-            onClick={handleDisplay}
-          />
+          <div style={{ width: "2rem" }}>
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className="icon-search icon"
+              onClick={handleDisplay}
+            />
+          </div>
         )}
       </div>
     </div>

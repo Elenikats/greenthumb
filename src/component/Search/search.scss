@@ -5,26 +5,20 @@
         position: relative;
         
         input {
+            margin-top: .4rem;
             border: 1px solid rgb(116,197,169);
             z-index: -1;
+            width: 11.3rem;
+
+            &::placeholder {
+                font-size: .8rem;
+            }
             
 
             &:focus {
                 outline: 2px solid rgb(116,197,169);
             }
         }
-
-
-        // .input-hide {
-        //    visibility: hidden;
-        // }
-    
-        // .input-show {
-        //     display: block;
-        //     position: absolute;
-        //     right: 1.6rem;
-
-        // }
     }
 
     .icon-search, .icon-x {

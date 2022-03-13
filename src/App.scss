@@ -21,12 +21,16 @@
         .default-height {
             min-height: calc(100vh - 124.81px - 121.27px);
         }
-
-        
-
     }
-
 }
+
+.NotFound {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    color: rgb(116, 197, 170);
+}
+
 
 @media screen and (max-width: 786px) {
     body {

@@ -22,16 +22,16 @@ export default function Products({
     useContext(searchContext);
   //////////////
 
-  const getFilteredItems = (search, plants) => {
-    if (!search) {
-      return [];
-    }
-    return plants.filter((plant) =>
-      plant.name.toLowerCase().includes(search.toLowerCase())
-    );
-  };
+  // const getFilteredItems = (search, plants) => {
+  //   if (!search) {
+  //     return [];
+  //   }
+  //   return plants.filter((plant) =>
+  //     plant.name.toLowerCase().includes(search.toLowerCase())
+  //   );
+  // };
 
-  const filteredItems = getFilteredItems(search, plants);
+  // const filteredItems = getFilteredItems(search, plants);
 
   //////////////
 
@@ -52,7 +52,7 @@ export default function Products({
   }
 
   return (
-    <div className="Products container-fluid d-flex justify-content-center animate__animated animate__fadeIn">
+    <div className="Products container-fluid justify-content-center animate__animated animate__fadeIn default-height">
       <Row xs={1} md={2} lg={3}>
         {allProducts.map((plant) => {
           return (

@@ -49,7 +49,12 @@ export default function App({ counterCart, setCounterCart }) {
             <FontAwesomeIcon icon={faShoppingBasket} className="icon" />
           </NavLink>
         </LinkContainer>
-        <div className="counterCart">{counterCart}</div>
+        <div
+          className="counterCart"
+          style={{ width: ".1rem", paddingRight: ".2rem" }}
+        >
+          {counterCart}
+        </div>
 
         <NavLink>
           <Search />

@@ -12,7 +12,7 @@ export default function Hero() {
         className="animate__animated animate__fadeIn animate__slower"
         style={{
           width: "100vw",
-          height: "86vh",
+          height: "89vh",
           backgroundImage: `url(${monsti})`,
           backgroundPosition: "center",
           backgroundSize: "cover",
