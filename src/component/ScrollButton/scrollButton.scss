@@ -17,6 +17,15 @@
 
 @media screen and (max-width: 786px) {
     .icon-scrollUp {
+        width: 25px;
+        height: 25px;
+        bottom: 1.5rem;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .icon-scrollUp {
         display: none;
     }
 
