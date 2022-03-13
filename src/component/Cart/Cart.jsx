@@ -1,14 +1,10 @@
 import "./cart.scss";
-
 import { useState, useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
 import { userContext } from "../../contexts/userContext.jsx";
 import { cartContext } from "../../contexts/cartContext.jsx";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -61,7 +57,7 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
 
   if (!shoppingCompleted) {
     return (
-      <Container fluid="lg">
+      <Container fluid="lg" className="default-height">
         <h1>Cart</h1>
         <Row>
           {/* Left side table */}

@@ -1,5 +1,6 @@
 .Main {
     overflow: hidden;
+    min-height: 100vh;
     .Hero {
         position: relative;
         .banner {
@@ -122,6 +123,11 @@
             }  
         }    
     }
+
+    // .Footer {
+    //     position: sticky;
+    //     bottom: 0;
+    // }
 }
 
 
