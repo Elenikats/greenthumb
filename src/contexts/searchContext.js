@@ -6,12 +6,12 @@ export const searchContext = React.createContext("");
 
 export default function SearchContextProvider(props) {
     const [search, setSearch] = useState("");
-    const [filteredItems, setFilteredItems] = useState([]);
+    const [allProducts, setAllProducts] = useState(plants);
 
     // it takes the search value input and filters the items that don't include it.
 
 
-  const value = [search, setSearch, filteredItems, setFilteredItems ];
+  const value = [search, setSearch, allProducts, setAllProducts ];
 
   return (
     <searchContext.Provider value={value}>

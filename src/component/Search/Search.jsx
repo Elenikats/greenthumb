@@ -6,41 +6,56 @@ import ProductItem from "../ProductItem/ProductItem.jsx";
 import { searchContext } from "../../contexts/searchContext.js";
 import { useContext } from "react";
 import "./search.scss";
+import { useNavigate } from "react-router-dom";
+
+import { Nav, Navbar, NavLink, NavDropdown } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+
+////////////////////////////////////////
 
 export default function Search() {
-  const [search, setSearch] = useContext(searchContext);
+  const [search, setSearch, allProducts, setAllProducts] =
+    useContext(searchContext);
   const [displayInputField, setDisplayInputField] = useState(false);
-
-  const getFilteredItems = (search, plants) => {
-    if (!search) {
-      return [];
-    }
-    return plants.filter((plant) =>
-      plant.name.toLowerCase().includes(search.toLowerCase())
-    );
-  };
-
-  const filteredItems = getFilteredItems(search, plants);
+  const navigate = useNavigate();
 
   console.log(search);
   console.log(plants);
-  console.log(filteredItems);
 
   const handleDisplay = () => {
     setDisplayInputField(!displayInputField);
+  };
+
+  const handleSearchProduct = (e) => {
+    navigate("/products");
+    const filteredProducts = allProducts.filter((plant) =>
+      plant.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    if (e.target.value == "") {
+      setAllProducts(plants);
+    } else {
+      setAllProducts(filteredProducts);
+    }
   };
 
   return (
     <div className="Search">
       <div className="input-icon-container">
         <input
+          style={{
+            position: "absolute",
+            top: "120%",
+            right: "-3%",
+            opacity: displayInputField ? "1" : "0",
+            // display: !displayInputField ? displayNone : displayBlockToNone,
+          }}
           type="text"
           placeholder="Search..."
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={handleSearchProduct}
           className={
             displayInputField
-              ? "input-show animate__animated animate__fadeInDown"
-              : "animate__animated animate__fadeOutUp input-hide "
+              ? " animate__animated animate__fadeInDown"
+              : "animate__animated animate__fadeOutUp "
           }
         />
         {displayInputField ? (
@@ -56,9 +71,6 @@ export default function Search() {
             onClick={handleDisplay}
           />
         )}
-      </div>
-      <div>
-        {filteredItems == "" ? "" : filteredItems.map((plant) => plant.Name)}
       </div>
     </div>
   );

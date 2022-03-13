@@ -9,7 +9,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { searchContext } from "../../contexts/searchContext.js";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 // console.log(plants);
 export default function Products({
@@ -18,8 +18,22 @@ export default function Products({
   counterCart,
   setCounterCart,
 }) {
-  const [search, setSearch, filteredItems, setFilteredItems] =
+  const [search, setSearch, allProducts, setAllProducts] =
     useContext(searchContext);
+  //////////////
+
+  const getFilteredItems = (search, plants) => {
+    if (!search) {
+      return [];
+    }
+    return plants.filter((plant) =>
+      plant.name.toLowerCase().includes(search.toLowerCase())
+    );
+  };
+
+  const filteredItems = getFilteredItems(search, plants);
+
+  //////////////
 
   function handleShopping(plant) {
     const exist = cart.find((item) => item.id === plant.id);
@@ -40,7 +54,7 @@ export default function Products({
   return (
     <div className="Products container-fluid d-flex justify-content-center animate__animated animate__fadeIn">
       <Row xs={1} md={2} lg={3}>
-        {plants.map((plant) => {
+        {allProducts.map((plant) => {
           return (
             <Col
               key={plant.id}

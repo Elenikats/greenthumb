@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <div className="Hero">
       <div
-        className="animate__animated animate__fadeIn"
+        className="animate__animated animate__fadeIn animate__slower"
         style={{
           width: "100vw",
           height: "86vh",
