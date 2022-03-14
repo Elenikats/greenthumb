@@ -6,8 +6,8 @@ import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
 import { useContext } from "react";
 import { userContext } from '../../contexts/userContext.jsx'
-import Login from "../Login/Login.jsx";
-import Register from "../Login/Register";
+import Login from "../LoginLogout/Login.jsx";
+import Register from "../LoginLogout/Register";
 
 export default function App() {
 

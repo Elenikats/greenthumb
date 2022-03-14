@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import CardGroup from "react-bootstrap/CardGroup";
 import "./products.scss";
 import image1 from "../../plant-photos/plants/albo-monstera.jpeg";
+import { useContext } from "react";
 
 import plants from "../../plants.js";
 // import {plantFolder} from "./config.js"
@@ -16,7 +17,10 @@ export default function Products({
   setCart,
   counterCart,
   setCounterCart,
+  buttonDisabled
 }) {
+  const disabled = {buttonDisabled}
+  console.log(buttonDisabled);
   function handleShopping(plant) {
     const exist = cart.find((item) => item.id === plant.id);
     const cartWithFilteredOutTheOneThatIFound = cart.filter(
@@ -62,6 +66,8 @@ export default function Products({
                     <Button
                       onClick={() => handleShopping(plant)}
                       variant="success"
+                      disabled={disabled}
+                      active={!disabled}
                     >
                       Buy now
                     </Button>
