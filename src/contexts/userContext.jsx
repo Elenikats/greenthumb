@@ -1,14 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import userArray from "../user.js";
 
 export const userContext = React.createContext();
 
 const userLocal = localStorage.getItem("user");
-const defaultUser = !userLocal ? userArray[0] : JSON.parse(userLocal);
+const defaultUser = !userLocal ? "" : JSON.parse(userLocal);
 
 const usersLocal = localStorage.getItem("users");
-const defaultUsers = usersLocal ? JSON.parse(usersLocal) : userArray;
+const defaultUsers = usersLocal ? JSON.parse(usersLocal) : [];
 
 // GET DATA
 const loginLocal = localStorage.getItem("login");
