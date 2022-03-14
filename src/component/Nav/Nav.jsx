@@ -38,10 +38,11 @@ export default function NavigationBar({ counterCart, setCounterCart }) {
 
   const navigate = useNavigate();
 
+  ////////
   function checkUserState() {
-    login ? navigate("/cart") : setShow(true);
-    setCartIconClicked(true);
+    login ? navigate("/cart") : setShow(true) && setCartIconClicked(true);
   }
+
   return (
     <Navbar collapseOnSelect expand="xs">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
