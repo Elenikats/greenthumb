@@ -14,27 +14,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function Login({buttonDisabled, setButtonDisabled}) {
-  const [user, setUser, users, setUsers] = useContext(userContext);
+  const [user, setUser, users, setUsers, login, setLogin, loggedInFirstName, setLoggedInFirstName] = useContext(userContext);
   const emailRef = useRef();
   console.log(setButtonDisabled);
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
   const [alert, setAlert] = useState(false);
-  const [login, setLogin] = useState(false)
+ 
 
 
   function handleLogin() {
     const checkLogin = users.find(
       (email) => email.email == emailRef.current.value
     );
+    console.log(checkLogin);
     if (checkLogin) {
       // console.log("email exist"); 
       // close login box
       setShow(false)
       setAlert(false)
       setLogin(true)
-      setButtonDisabled(false)
+      setLoggedInFirstName(checkLogin.firstName)
 
     } else {
       // console.log("email doesn't exist ");
@@ -47,7 +48,7 @@ export default function Login({buttonDisabled, setButtonDisabled}) {
 
     setLogin(false)
     setShow(false)
-    setButtonDisabled(true)
+    setLoggedInFirstName("")
 
   }
 
@@ -97,7 +98,7 @@ export default function Login({buttonDisabled, setButtonDisabled}) {
         
           {/* <NavLink to="register"> */}
           <Button variant="secondary" onClick={handleClose}>
-            <NavLink to="/login/register">Register</NavLink>
+            <NavLink to="/register">Register</NavLink>
           </Button>
         </Modal.Footer>
       </Modal>

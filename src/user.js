@@ -5,6 +5,7 @@ const users = [
     lastName: "herrig",
     email: "angela.k.herrig@gmail.com",
     password: "IlovePlant-5",
+    // is logged in state HERE.
     // payment: {
     //   street: "mainstreet 6",
     //   pc: "12345",

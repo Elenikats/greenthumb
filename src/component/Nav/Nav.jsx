@@ -11,7 +11,7 @@ import Register from "../LoginLogout/Register";
 
 export default function App() {
 
-  const [user, setUser, users, setUsers] = useContext(userContext) 
+  const [user, setUser, users, setUsers, login, setLogin, loggedInFirstName, setLoggedInFirstName] = useContext(userContext) 
   console.log(user);
   return (
     // <h2>this is the nav</h2>
@@ -28,7 +28,7 @@ export default function App() {
       </LinkContainer>
 
       <Nav className="loginAndCartContainer">
-          <p className="userName">{user.firstName}</p>
+      <p className="userName"> {loggedInFirstName ? `Hello ${loggedInFirstName}`  : ""}</p>
         {/* <LinkContainer to="/login">
           <NavLink> */}
             <Login />
