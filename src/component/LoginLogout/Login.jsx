@@ -35,12 +35,14 @@ export default function Login() {
   const handleClose = () => {
     setShow(false);
     setCartIconClicked(false);
+    setAlert(false);
   };
 
   function handleLogin() {
     const checkLogin = users.find(
       (email) => email.email == emailRef.current.value
     );
+
     console.log(checkLogin);
     if (checkLogin) {
       // console.log("email exist");
@@ -49,6 +51,7 @@ export default function Login() {
       setAlert(false);
       setLogin(true);
       setLoggedInFirstName(checkLogin.firstName);
+      setCartIconClicked(false);
       if (cartIconClicked) {
         navigate("/cart");
       }

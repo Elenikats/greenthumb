@@ -44,7 +44,7 @@
         }
 
         .quantityContainer {
-            width: 4rem;
+            width: 6rem;
 
             .quantity {
                 font-weight: bold;
@@ -63,6 +63,10 @@
                 height: 0.1rem;
                 cursor: pointer;
             }
+        }
+
+        .subtotal-item {
+            width: 4rem;
         }
 
 
