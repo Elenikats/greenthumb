@@ -18,6 +18,7 @@ export default function UserContextProvider(props) {
   const [show, setShow] = useState(false);
   const [alert, setAlert] = useState(false);
   const [cartIconClicked, setCartIconClicked] = useState(false);
+  const [loggedInFirstName, setLoggedInFirstName] = useState("");
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
@@ -40,6 +41,8 @@ export default function UserContextProvider(props) {
     setAlert,
     cartIconClicked,
     setCartIconClicked,
+    loggedInFirstName,
+    setLoggedInFirstName,
   ];
 
   return (
