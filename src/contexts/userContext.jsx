@@ -14,8 +14,11 @@ const defaultUsers = usersLocal ? JSON.parse(usersLocal) : userArray;
 export default function UserContextProvider(props) {
   const [users, setUsers] = useState(defaultUsers);
   const [user, setUser] = useState(defaultUser);
-  const [loggedInFirstName, setLoggedInFirstName] = useState("")
-  const [login, setLogin] = useState(false)
+  const [login, setLogin] = useState(false);
+  const [show, setShow] = useState(false);
+  const [alert, setAlert] = useState(false);
+  const [cartIconClicked, setCartIconClicked] = useState(false);
+  const [loggedInFirstName, setLoggedInFirstName] = useState("");
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
@@ -25,7 +28,22 @@ export default function UserContextProvider(props) {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
 
-  const value = [user, setUser, users, setUsers, login, setLogin, loggedInFirstName, setLoggedInFirstName];
+  const value = [
+    user,
+    setUser,
+    users,
+    setUsers,
+    login,
+    setLogin,
+    show,
+    setShow,
+    alert,
+    setAlert,
+    cartIconClicked,
+    setCartIconClicked,
+    loggedInFirstName,
+    setLoggedInFirstName,
+  ];
 
   return (
     <userContext.Provider value={value}>{props.children}</userContext.Provider>

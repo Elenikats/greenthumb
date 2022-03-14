@@ -4,8 +4,8 @@ import Nav from "./component/Nav/Nav.jsx";
 
 import Login from "./component/LoginLogout/Login.jsx";
 import LoggedIn from "./component/LoginLogout/LoggedIn.jsx";
-import Welcome from "./component/LoginLogout/Welcome.jsx"
-import RequireLogin from "./App.jsx"
+import Welcome from "./component/LoginLogout/Welcome.jsx";
+import RequireLogin from "./App.jsx";
 import Register from "./component/LoginLogout/Register.jsx";
 
 import About from "./component/About/About.jsx";
@@ -57,9 +57,8 @@ export default function App() {
           />
         </Route>
         <Route path="/blog" element={<Blog />} />
-        <Route path="/login" element={<Login />}/>
-          <Route path="register" element={<Register />} />
-        
+        <Route path="register" element={<Register />} />
+
         <Route
           path="/cart"
           element={

@@ -1,7 +1,8 @@
-import { Nav, NavLink } from "react-router-dom";
+import { Nav, NavLink, useNavigate } from "react-router-dom";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 import { userContext } from "../../contexts/userContext";
 import { useContext, useRef } from "react";
 import usersArray from "../../user.js";
@@ -12,25 +13,52 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-export default function Login(props) {
-  const [user, setUser, users, setUsers] = useContext(userContext);
+export default function Login() {
+  const navigate = useNavigate();
+  const [
+    user,
+    setUser,
+    users,
+    setUsers,
+    login,
+    setLogin,
+    show,
+    setShow,
+    alert,
+    setAlert,
+    cartIconClicked,
+    setCartIconClicked,
+  ] = useContext(userContext);
   const emailRef = useRef();
-  // console.log(usersArray);
 
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleClose = () => {
+    setShow(false);
+    setCartIconClicked(false);
+  };
 
   function handleLogin() {
     const checkLogin = users.find(
       (email) => email.email == emailRef.current.value
     );
     if (checkLogin) {
-      console.log("email exist");
+      // console.log("email exist");
+      // close login box
+      setShow(false);
+      setAlert(false);
+      setLogin(true);
+      if (cartIconClicked) {
+        navigate("/cart");
+      }
     } else {
-      console.log("email doesn't exist ");
+      // console.log("email doesn't exist ");
+      setAlert(true);
     }
+  }
+
+  function handleLogout() {
+    setLogin(false);
+    setShow(false);
   }
 
   return (
@@ -46,6 +74,13 @@ export default function Login(props) {
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
+        {cartIconClicked ? (
+          <Alert variant="warning">
+            <p>Please log in</p>
+          </Alert>
+        ) : (
+          ""
+        )}
         <Modal.Body className="loginContainer">
           {/* Floating Inputs */}
           <FloatingLabel
@@ -64,11 +99,24 @@ export default function Login(props) {
             <Form.Control type="password" placeholder="Password" />
           </FloatingLabel>
         </Modal.Body>
-
+        {alert ? (
+          <Alert variant="danger">
+            <p>Account doesn't exist please register</p>
+          </Alert>
+        ) : (
+          ""
+        )}
         <Modal.Footer>
-          <Button onClick={handleLogin} variant="success">
-            Log in
-          </Button>{" "}
+          {login ? (
+            <Button onClick={handleLogout} variant="success">
+              Log out
+            </Button>
+          ) : (
+            <Button onClick={handleLogin} variant="success">
+              Log in
+            </Button>
+          )}
+
           {/* <NavLink to="register"> */}
           <Button variant="secondary" onClick={handleClose}>
             <NavLink to="/login/register">Register</NavLink>
