@@ -1,19 +1,20 @@
 .Products {
     .card {
         margin: 1rem;
-        width: 90%;
-        padding: 2rem;
+        width: 100%;
+        padding: 1rem;
 
         .card-body {
-            padding: 1.4rem 0;
-            .button-buy {
+            .button-quick-add {
                 display: flex;
-                flex-direction: row-reverse;  
+                flex-direction: row-reverse; 
+                
+                .icon-plus {
+                    margin-right: 0.3rem;
+                    width: .7rem;
+                }
             }
         }
-
     }
-
-
 }
 

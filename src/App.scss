@@ -3,18 +3,58 @@
     padding: 0;
     box-sizing: border-box;
 
-
-    .btn {
-        background-color: rgb(116, 197, 170);
-
-        &:hover {
-            color: rgb(9, 70, 9);
-            background-color: rgb(116, 197, 170);
-        }
+    html {
+        min-height: 100%;
     }
 
+    body {
+
+        .btn {
+            background-color: rgb(116, 197, 170);
     
+            &:hover {
+                color: rgb(9, 70, 9);
+                background-color: rgb(116, 197, 170);
+            }
+        }
+
+        .default-height {
+            min-height: calc(100vh - 124.81px - 121.27px);
+        }
+    }
+}
+
+.NotFound {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    color: rgb(116, 197, 170);
+}
+
+
+@media screen and (max-width: 786px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin: auto 0;
+        .btn {
+            background-color: rgb(116, 197, 170);
     
+            &:hover {
+                color: rgb(9, 70, 9);
+                background-color: rgb(116, 197, 170);
+            }
+        }
+
+        .default-height {
+            min-height: calc(100vh - 98.31px - 111.99px);
+        }
+
+    
+    }
+    
+
 }
 
 

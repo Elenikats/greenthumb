@@ -6,10 +6,10 @@ import "./about.scss";
 
 export default function About() {
   return (
-    <section className="secAbout">
+    <section className="About default-height ">
       <Container>
         <Row>
-          <Col sm={7}>
+          <Col md={7}>
             <h2>Let us introduce ourselves!</h2>
             <p>
               We are three passionate web-developers who just happen to love
@@ -19,8 +19,15 @@ export default function About() {
               We created this website with React.js for our SPA final project
               during our studies in Digital Career Institute.
             </p>
+            <p>
+              Wanna check out more from us? Have a look to our Github accounts
+              for more projects!
+            </p>
+            <p>
+              <i>Small disclaimer: you cannot buy plants from here! :D </i>{" "}
+            </p>
           </Col>
-          <Col sm={5}>
+          <Col md={5}>
             <img className="aboutUsImg" src={aboutUsImg} alt="that's us" />
           </Col>
         </Row>

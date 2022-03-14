@@ -1,19 +1,28 @@
 .navbar {
     background-color: rgb(255, 244, 245);
     padding: 0rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
 
-    .navbar-brand {
-        img {
-            width: 150px;
-            // height: 130px;
-        }
-    }
 
     .navbar-toggler {
         background-color: rgb(188, 224, 212);
-        color: rgb(66, 114, 96);
+        color: rgb(102, 158, 138);
 
     }
+
+    .navbar-brand {
+        width: 2%;
+            img {
+
+                width: 130px;
+            }
+    }
+
 
     .loginAndCartContainer {
         display: flex;
@@ -25,19 +34,61 @@
         }
 
         .icon {
-            color: rgb(66, 114, 96);
+            color: rgb(116, 197, 170);
             font-size: 1.4rem;
-
         }
 
         .icon1 {
             margin-right: 1rem;
         }
+
+
     }
 
     .counterCart {
         color: rgb(66, 114, 96);
         font-weight: bold;
+    }
+}
 
+
+
+
+
+
+@media screen and (max-width: 786px) {
+    .navbar {
+        padding: 0rem 1.5rem;
+
+        .navbar-toggler {
+            padding: .4rem .5rem;
+            font-size: .8rem;
+        }
+
+        .navbar-brand {
+            margin-right: 4rem;
+            img {
+                width: 100px;
+            }
+        }
+    
+        .loginAndCartContainer {
+    
+            .userName {
+                display: none;
+            }
+    
+            .icon {
+                font-size: 1.2rem;
+            }
+    
+        }
+    
+        .counterCart {
+            color: rgb(62, 116, 96);
+            font-weight: bold;
+            font-size: 12px;
+
+        }
     }
 }

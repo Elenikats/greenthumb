@@ -1,11 +1,13 @@
 .Main {
     overflow: hidden;
+    min-height: 100vh;
     .Hero {
+        background-color: rgba(114, 187, 165, 0.082);
         position: relative;
         .banner {
             h1 {
                 position: absolute;
-                top: 75%;
+                top: 73%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 color: rgb(248, 183, 183);
@@ -122,6 +124,11 @@
             }  
         }    
     }
+
+    // .Footer {
+    //     position: sticky;
+    //     bottom: 0;
+    // }
 }
 
 

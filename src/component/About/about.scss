@@ -1,29 +1,14 @@
-.secAbout {
-    // .flex-container {
-    //     margin-top: 2rem;
-    //     display: flex;
-    //     justify-content: center;
-    // }
-    // .carousel {
-    //     width: 60vw;
-    //     border-radius: 5%;
-    //     .carousel-inner {
-    //         border-radius: 5%;
-    //     }
-
-    //     img {
-    //         border-radius: 5%;
-    //     }
-        
-
-    // }
-    margin-top: 5rem;
-
+.About {
     .aboutUsImg {
         width: 100%;
     }
 
     .container {
-        margin-top: 3rem;
+        padding: 5rem 5rem ;
     }
+
+    h2 {
+        padding-bottom:  1rem;
+    }
+
 }
