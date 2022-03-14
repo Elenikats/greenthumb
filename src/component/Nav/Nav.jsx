@@ -10,17 +10,38 @@ import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
 import { useContext } from "react";
 import { userContext } from "../../contexts/userContext.jsx";
-import Login from "../Login/Login.jsx";
-import Register from "../Login/Register";
+import Login from "../LoginLogout/Login.jsx";
+import Register from "../LoginLogout/Register";
 import Search from "../Search/Search.jsx";
 import { searchContext } from "../../contexts/searchContext";
+import { useNavigate } from "react-router-dom";
 
-export default function App({ counterCart, setCounterCart }) {
-  const [user, setUser, users, setUsers] = useContext(userContext);
+export default function NavigationBar({ counterCart, setCounterCart }) {
+  const [
+    user,
+    setUser,
+    users,
+    setUsers,
+    login,
+    setLogin,
+    show,
+    setShow,
+    alert,
+    setAlert,
+    cartIconClicked,
+    setCartIconClicked,
+    loggedInFirstName,
+    setLoggedInFirstName,
+  ] = useContext(userContext);
   const [search, setSearch, filteredItems, setFilteredItems] =
     useContext(searchContext);
-  console.log(user);
 
+  const navigate = useNavigate();
+
+  function checkUserState() {
+    login ? navigate("/cart") : setShow(true);
+    setCartIconClicked(true);
+  }
   return (
     <Navbar collapseOnSelect expand="xs">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -36,19 +57,21 @@ export default function App({ counterCart, setCounterCart }) {
           </div>
         </Navbar.Brand>
       </LinkContainer>
-
       <Nav className="loginAndCartContainer">
-        <p className="userName">Hello {user ? user.firstName : ""}</p>
+        <p className="userName">
+          {loggedInFirstName ? `Hello ${loggedInFirstName}` : ""}
+        </p>
 
         <NavLink>
           <Login />
         </NavLink>
 
-        <LinkContainer to="/cart">
-          <NavLink>
+        <NavLink>
+          <span onClick={checkUserState}>
             <FontAwesomeIcon icon={faShoppingBasket} className="icon" />
-          </NavLink>
-        </LinkContainer>
+          </span>
+        </NavLink>
+
         <div
           className="counterCart"
           style={{ width: ".1rem", paddingRight: ".2rem" }}
@@ -82,6 +105,18 @@ export default function App({ counterCart, setCounterCart }) {
           <LinkContainer to="/plantdoctor">
             <Nav.Link>Plant-doctor</Nav.Link>
           </LinkContainer>
+
+          {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">
+              Another action
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">
+              Separated link
+            </NavDropdown.Item>
+          </NavDropdown> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

@@ -29,13 +29,6 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      {/* <div>
-        <p>faq</p>
-        <p>contact</p>
-        <p>returns</p>
-        <p>terms and conditions</p>
-        <p>privacy</p>
-      </div> */}
     </section>
   );
 }
