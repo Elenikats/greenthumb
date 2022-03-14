@@ -16,7 +16,6 @@ export default function Products({
   setCart,
   counterCart,
   setCounterCart,
-  buttonDisabled
 }) {
   const [search, setSearch, allProducts, setAllProducts] =
     useContext(searchContext);
@@ -85,8 +84,6 @@ export default function Products({
                     <Button
                       onClick={() => handleShopping(plant)}
                       variant="success"
-                      disabled={disabled}
-                      active={!disabled}
                     >
                       <FontAwesomeIcon icon={faPlus} className="icon-plus" />
                       Quick Add

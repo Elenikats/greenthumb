@@ -116,7 +116,9 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
                         </div>
                       </td>
                       <td>
-                        <div>{product.price * product.quantity} €</div>
+                        <div className="subtotal-item">
+                          {product.price * product.quantity} €
+                        </div>
                       </td>
                     </tr>
                   );

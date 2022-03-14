@@ -1,55 +1,70 @@
-import { Nav, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import { userContext } from "../../contexts/userContext";
 import { useContext, useRef } from "react";
-import usersArray from "../../user.js";
-import { Routes } from "react-router-dom";
-import Collapse from "react-bootstrap/Collapse";
-import { Card, Modal } from "react-bootstrap";
-import { useState } from "react";
+import { Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 
-export default function Login({buttonDisabled, setButtonDisabled}) {
-  const [user, setUser, users, setUsers, login, setLogin, loggedInFirstName, setLoggedInFirstName] = useContext(userContext);
+export default function Login() {
+  const navigate = useNavigate();
+  const [
+    user,
+    setUser,
+    users,
+    setUsers,
+    login,
+    setLogin,
+    show,
+    setShow,
+    alert,
+    setAlert,
+    cartIconClicked,
+    setCartIconClicked,
+    loggedInFirstName,
+    setLoggedInFirstName,
+  ] = useContext(userContext);
+
   const emailRef = useRef();
-  console.log(setButtonDisabled);
-  const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
-  const handleClose = () => setShow(false);
-  const [alert, setAlert] = useState(false);
- 
-
+  const handleClose = () => {
+    setShow(false);
+    setCartIconClicked(false);
+    setAlert(false);
+  };
 
   function handleLogin() {
     const checkLogin = users.find(
       (email) => email.email == emailRef.current.value
     );
+
     console.log(checkLogin);
     if (checkLogin) {
-      // console.log("email exist"); 
+      // console.log("email exist");
       // close login box
-      setShow(false)
-      setAlert(false)
-      setLogin(true)
-      setLoggedInFirstName(checkLogin.firstName)
-
+      setShow(false);
+      setAlert(false);
+      setLogin(true);
+      setLoggedInFirstName(checkLogin.firstName);
+      setCartIconClicked(false);
+      if (cartIconClicked) {
+        navigate("/cart");
+      }
     } else {
       // console.log("email doesn't exist ");
-      setAlert(true)
-      
+      setAlert(true);
     }
   }
 
   function handleLogout() {
-
-    setLogin(false)
-    setShow(false)
-    setLoggedInFirstName("")
-
+    setLogin(false);
+    setShow(false);
+    setLoggedInFirstName("");
   }
 
   return (
@@ -65,6 +80,13 @@ export default function Login({buttonDisabled, setButtonDisabled}) {
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
+        {cartIconClicked ? (
+          <Alert variant="warning">
+            <p>Please log in</p>
+          </Alert>
+        ) : (
+          ""
+        )}
         <Modal.Body className="loginContainer">
           {/* Floating Inputs */}
           <FloatingLabel
@@ -84,22 +106,34 @@ export default function Login({buttonDisabled, setButtonDisabled}) {
           </FloatingLabel>
         </Modal.Body>
 
-        {alert ? <Alert variant="danger"> 
-          <p>Account doesn't exist please register</p>
-        </Alert> : ""}
+        {alert ? (
+          <Alert variant="danger">
+            <p>Account doesn't exist, please register!</p>
+          </Alert>
+        ) : (
+          ""
+        )}
 
         <Modal.Footer>
-          { login ? <Button onClick={handleLogout} variant="success">
-            Log out
-          </Button> : <Button onClick={handleLogin} variant="success">
-            Log in
-          </Button>}
-          
-        
+          {login ? (
+            <Button onClick={handleLogout} variant="success">
+              Log out
+            </Button>
+          ) : (
+            <Button onClick={handleLogin} variant="success">
+              Log in
+            </Button>
+          )}
+
           {/* <NavLink to="register"> */}
-          <Button variant="secondary" onClick={handleClose}>
-            <NavLink to="/register">Register</NavLink>
-          </Button>
+
+          <LinkContainer to="/register">
+            <NavLink>
+              <Button variant="secondary" onClick={handleClose}>
+                Register
+              </Button>
+            </NavLink>
+          </LinkContainer>
         </Modal.Footer>
       </Modal>
     </>

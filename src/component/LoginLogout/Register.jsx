@@ -6,9 +6,10 @@ import Button from "react-bootstrap/Button";
 import "./register.scss";
 import { userContext } from "../../contexts/userContext";
 import CloseButton from "react-bootstrap/CloseButton";
-
+import { useNavigate } from "react-router-dom";
 
 function Register(props) {
+  const navigate = useNavigate();
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const emailRef = useRef();
@@ -17,7 +18,22 @@ function Register(props) {
   const cityRef = useRef();
   const zipRef = useRef();
 
-  const [user, setUser, users, setUsers] = useContext(userContext);
+  const [
+    user,
+    setUser,
+    users,
+    setUsers,
+    login,
+    setLogin,
+    show,
+    setShow,
+    alert,
+    setAlert,
+    cartIconClicked,
+    setCartIconClicked,
+    loggedInFirstName,
+    setLoggedInFirstName,
+  ] = useContext(userContext);
   const handleClose = () => setShow(false);
 
   console.log([...users]);
@@ -35,6 +51,9 @@ function Register(props) {
     };
     setUser(newUser);
     setUsers([...users, newUser]);
+    setLogin(true);
+    setLoggedInFirstName(firstNameRef.current.value);
+    navigate(-1);
 
     firstNameRef.current.value = "";
     lastNameRef.current.value = "";

@@ -1,11 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./component/Nav/Nav.jsx";
-
-import Login from "./component/LoginLogout/Login.jsx";
-import LoggedIn from "./component/LoginLogout/LoggedIn.jsx";
-import Welcome from "./component/LoginLogout/Welcome.jsx";
-import RequireLogin from "./App.jsx";
 import Register from "./component/LoginLogout/Register.jsx";
 
 import About from "./component/About/About.jsx";

@@ -39,9 +39,9 @@ export default function NavigationBar({ counterCart, setCounterCart }) {
   const navigate = useNavigate();
 
   function checkUserState() {
-    login ? navigate("/cart") : setShow(true);
-    setCartIconClicked(true);
+    login ? navigate("/cart") : setShow(true) || setCartIconClicked(true);
   }
+
   return (
     <Navbar collapseOnSelect expand="xs">
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -59,14 +59,12 @@ export default function NavigationBar({ counterCart, setCounterCart }) {
       </LinkContainer>
       <Nav className="loginAndCartContainer">
         <p className="userName">
-          {" "}
           {loggedInFirstName ? `Hello ${loggedInFirstName}` : ""}
         </p>
-        {/* <LinkContainer to="/login">
-          <NavLink> */}
-        <Login />
-        {/* </NavLink>
-        </LinkContainer> */}
+
+        <NavLink>
+          <Login />
+        </NavLink>
 
         <NavLink>
           <span onClick={checkUserState}>
