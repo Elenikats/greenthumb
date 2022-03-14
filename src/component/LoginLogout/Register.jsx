@@ -42,7 +42,7 @@ function Register(props) {
     e.preventDefault();
     const newUser = {
       firstName: firstNameRef.current.value,
-      lastName: lastNameRef.current.vale,
+      lastName: lastNameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
       address: addressRef.current.value,
