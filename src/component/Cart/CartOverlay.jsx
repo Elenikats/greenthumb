@@ -17,7 +17,9 @@ export default function CartOverlay({
 
     return (
       <div className="CartOverlay default-height">
-        <img src={thumb} alt="thumbs up" />
+        <div>
+          <img src={thumb} alt="thumbs up" className="thumb-img" />
+        </div>
         <div className="confirmed">
           <h2>Done !</h2>
           <p>You ordered great plants!</p>

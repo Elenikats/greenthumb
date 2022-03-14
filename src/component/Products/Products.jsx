@@ -6,6 +6,10 @@ import "./products.scss";
 import plants from "../../plants.js";
 import { NavLink } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { searchContext } from "../../contexts/searchContext.js";
+import { useContext, useState } from "react";
 
 // console.log(plants);
 export default function Products({
@@ -14,6 +18,23 @@ export default function Products({
   counterCart,
   setCounterCart,
 }) {
+  const [search, setSearch, allProducts, setAllProducts] =
+    useContext(searchContext);
+  //////////////
+
+  // const getFilteredItems = (search, plants) => {
+  //   if (!search) {
+  //     return [];
+  //   }
+  //   return plants.filter((plant) =>
+  //     plant.name.toLowerCase().includes(search.toLowerCase())
+  //   );
+  // };
+
+  // const filteredItems = getFilteredItems(search, plants);
+
+  //////////////
+
   function handleShopping(plant) {
     const exist = cart.find((item) => item.id === plant.id);
     const cartWithFilteredOutTheOneThatIFound = cart.filter(
@@ -31,9 +52,9 @@ export default function Products({
   }
 
   return (
-    <div className="Products container-fluid d-flex justify-content-center animate__animated animate__fadeIn">
+    <div className="Products container-fluid justify-content-center animate__animated animate__fadeIn default-height">
       <Row xs={1} md={2} lg={3}>
-        {plants.map((plant) => {
+        {allProducts.map((plant) => {
           return (
             <Col
               key={plant.id}
@@ -56,17 +77,17 @@ export default function Products({
                 </LinkContainer>
 
                 <Card.Body>
-                  {/* <Card.Text>{plant.description}</Card.Text> */}
                   <div>
                     <Card.Title>{plant.name}</Card.Title>
                     <h6>{plant.price} €</h6>
                   </div>
-                  <div className="button-buy">
+                  <div className="button-quick-add">
                     <Button
                       onClick={() => handleShopping(plant)}
                       variant="success"
                     >
-                      Buy now
+                      <FontAwesomeIcon icon={faPlus} className="icon-plus" />
+                      Quick Add
                     </Button>
                   </div>
                 </Card.Body>

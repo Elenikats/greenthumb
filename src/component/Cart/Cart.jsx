@@ -57,7 +57,7 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
 
   if (!shoppingCompleted) {
     return (
-      <Container fluid="lg" className="default-height">
+      <Container fluid="lg" className="default-height Cart">
         <h1>Cart</h1>
         <Row>
           {/* Left side table */}
@@ -159,6 +159,7 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
 
               <Button
                 variant="success"
+                className="submit-button"
                 onClick={() => setShoppingCompleted(!shoppingCompleted)}
               >
                 submit

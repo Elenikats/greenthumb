@@ -8,6 +8,32 @@
     }
 
     body {
+
+        .btn {
+            background-color: rgb(116, 197, 170);
+    
+            &:hover {
+                color: rgb(9, 70, 9);
+                background-color: rgb(116, 197, 170);
+            }
+        }
+
+        .default-height {
+            min-height: calc(100vh - 124.81px - 121.27px);
+        }
+    }
+}
+
+.NotFound {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    color: rgb(116, 197, 170);
+}
+
+
+@media screen and (max-width: 786px) {
+    body {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -19,21 +45,16 @@
                 color: rgb(9, 70, 9);
                 background-color: rgb(116, 197, 170);
             }
-
         }
 
         .default-height {
-            min-height: calc(100vh - 140px - 123.14px);
+            min-height: calc(100vh - 98.31px - 111.99px);
         }
 
+    
     }
-
-
-
-
-
     
-    
+
 }
 
 

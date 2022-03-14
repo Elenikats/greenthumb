@@ -19,6 +19,13 @@ export default function About() {
               We created this website with React.js for our SPA final project
               during our studies in Digital Career Institute.
             </p>
+            <p>
+              Wanna check out more from us? Have a look to our Github accounts
+              for more projects!
+            </p>
+            <p>
+              <i>Small disclaimer: you cannot buy plants from here! :D </i>{" "}
+            </p>
           </Col>
           <Col md={5}>
             <img className="aboutUsImg" src={aboutUsImg} alt="that's us" />

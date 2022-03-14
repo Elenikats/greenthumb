@@ -1,6 +1,8 @@
+import "./blog.scss";
+
 export default function Blog() {
   return (
-    <div className="Hero default-height">
+    <div className="Blog default-height">
       <h1>Blog</h1>
     </div>
   );

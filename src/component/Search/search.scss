@@ -1,0 +1,41 @@
+.Search {
+    position: relative;
+
+    .input-icon-container {
+        display: flex;
+        position: relative;
+
+        input {
+            margin-top: .4rem;
+            border: 1px solid rgb(116, 197, 169);
+            z-index: -1;
+            width: 11.3rem;
+
+            &::placeholder {
+                font-size: .8rem;
+            }
+
+
+            &:focus {
+                outline: 2px solid rgb(116, 197, 169);
+            }
+        }
+    }
+
+    .icon-search,
+    .icon-x {
+        padding-left: 1rem;
+        transition: all 1s ease-in-out;
+    }
+
+}
+
+@media screen and (max-width: 786px) {
+    .Search {
+        .input-icon-container {
+            input {
+                width: 5.4rem;
+            }
+        }
+    }
+}

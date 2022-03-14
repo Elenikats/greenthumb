@@ -55,10 +55,8 @@ export default function App() {
         </Route>
 
         <Route path="/blog" element={<Blog />} />
-        <Route path="login">
-          <Route index element={<Login />} />
-          <Route path="register" element={<Register />} />
-        </Route>
+        <Route path="register" element={<Register />} />
+
         <Route
           path="/cart"
           element={
