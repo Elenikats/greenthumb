@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faX } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import plants from "../../plants.js";
 import { searchContext } from "../../contexts/searchContext.js";
 import { useContext } from "react";
@@ -13,9 +13,16 @@ export default function Search() {
   const [search, setSearch, allProducts, setAllProducts] =
     useContext(searchContext);
   const [displayInputField, setDisplayInputField] = useState(false);
+  const [firstRender, setFirstRender] = useState(true);
   const navigate = useNavigate();
 
   // console.log(plants);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFirstRender(false);
+    }, 800);
+  }, []);
 
   const handleDisplay = () => {
     setDisplayInputField(!displayInputField);
@@ -42,22 +49,25 @@ export default function Search() {
   return (
     <div className="Search">
       <div className="input-icon-container">
-        <input
-          style={{
-            position: "absolute",
-            top: "120%",
-            right: "-3%",
-            opacity: displayInputField ? "1" : "0",
-          }}
-          type="text"
-          placeholder="Search..."
-          onChange={handleSearchProduct}
-          className={
-            displayInputField
-              ? " animate__animated animate__fadeInDown"
-              : "animate__animated animate__fadeOutUp "
-          }
-        />
+        {
+          <input
+            style={{
+              position: "absolute",
+              top: "120%",
+              right: "-3%",
+              visibility: displayInputField || !firstRender ? "" : "hidden",
+            }}
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={handleSearchProduct}
+            className={
+              displayInputField
+                ? " animate__animated animate__fadeInDown"
+                : "animate__animated animate__fadeOutUp "
+            }
+          />
+        }
         {displayInputField ? (
           <div style={{ width: "2rem" }}>
             <FontAwesomeIcon

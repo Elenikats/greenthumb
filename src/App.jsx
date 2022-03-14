@@ -25,7 +25,7 @@ export default function App() {
       <ScrollButton />
 
       <Routes>
-        <Route index element={<Main />}></Route>
+        <Route path="/" element={<Main />}></Route>
         <Route path="/home" element={<Main />} />
         <Route path="/about" element={<About />} />
 

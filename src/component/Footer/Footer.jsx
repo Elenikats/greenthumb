@@ -11,21 +11,21 @@ export default function Footer() {
         <div>
           <a href="https://github.com/AngelaHerrig" target="_blank">
             <FontAwesomeIcon icon={faGithub} className="icon-github" />
-            <h5>Angela Herrig</h5>
+            <h5>Angela</h5>
           </a>
         </div>
 
         <div>
           <a href="https://github.com/Elenikats" target="_blank">
             <FontAwesomeIcon icon={faGithub} className="icon-github" />
-            <h5>Eleni Katsareli</h5>
+            <h5>Eleni</h5>
           </a>
         </div>
 
         <div>
           <a href="https://github.com/Latifahal" target="_blank">
             <FontAwesomeIcon icon={faGithub} className="icon-github" />
-            <h5>Latifa Hal</h5>
+            <h5>Latifah</h5>
           </a>
         </div>
       </div>
