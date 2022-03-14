@@ -1,16 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./component/Nav/Nav.jsx";
+
+import Login from "./component/LoginLogout/Login.jsx";
+import LoggedIn from "./component/LoginLogout/LoggedIn.jsx";
+import Welcome from "./component/LoginLogout/Welcome.jsx"
+import RequireLogin from "./App.jsx"
+import Register from "./component/LoginLogout/Register.jsx";
+
 import About from "./component/About/About.jsx";
 import Products from "./component/Products/Products.jsx";
 import ProductItem from "./component/ProductItem/ProductItem.jsx";
 import NotFound from "./component/NotFound.jsx";
 import Cart from "./component/Cart/Cart.jsx";
-import Login from "./component/Login/Login.jsx";
 import Main from "./component/Homepage/Main.jsx";
 import Blog from "./component/Blog/Blog.jsx";
 import "./App.scss";
-import Register from "./component/Login/Register.jsx";
 import Footer from "./component/Footer/Footer.jsx";
 import { useState } from "react";
 import ScrollButton from "./component/ScrollButton/ScrollButton.jsx";
@@ -18,17 +23,15 @@ import ScrollButton from "./component/ScrollButton/ScrollButton.jsx";
 export default function App() {
   const [cart, setCart] = useState([]);
   const [counterCart, setCounterCart] = useState("");
-
   return (
     <div>
       <Nav counterCart={counterCart} setCounterCart={setCounterCart} />
       <ScrollButton />
 
       <Routes>
-        <Route index element={<Main />}></Route>
+        <Route path="/" element={<Main />} />
         <Route path="/home" element={<Main />} />
         <Route path="/about" element={<About />} />
-
         <Route path="products">
           <Route
             index
@@ -53,12 +56,10 @@ export default function App() {
             }
           />
         </Route>
-
         <Route path="/blog" element={<Blog />} />
-        <Route path="login">
-          <Route index element={<Login />} />
+        <Route path="/login" element={<Login />}/>
           <Route path="register" element={<Register />} />
-        </Route>
+        
         <Route
           path="/cart"
           element={

@@ -7,6 +7,7 @@ import "./register.scss";
 import { userContext } from "../../contexts/userContext";
 import CloseButton from "react-bootstrap/CloseButton";
 
+
 function Register(props) {
   const firstNameRef = useRef();
   const lastNameRef = useRef();

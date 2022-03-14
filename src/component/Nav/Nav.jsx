@@ -9,17 +9,17 @@ import Logo from "../../assets/Logo_250px.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
 import { useContext } from "react";
-import { userContext } from "../../contexts/userContext.jsx";
-import Login from "../Login/Login.jsx";
-import Register from "../Login/Register";
+import { userContext } from '../../contexts/userContext.jsx'
+import Login from "../LoginLogout/Login.jsx";
+import Register from "../LoginLogout/Register";
 import Search from "../Search/Search.jsx";
 import { searchContext } from "../../contexts/searchContext";
 
 export default function App({ counterCart, setCounterCart }) {
-  const [user, setUser, users, setUsers] = useContext(userContext);
+  const [user, setUser, users, setUsers, login, setLogin, loggedInFirstName, setLoggedInFirstName] = useContext(userContext) 
   const [search, setSearch, filteredItems, setFilteredItems] =
     useContext(searchContext);
-  console.log(user);
+  
 
   return (
     <Navbar collapseOnSelect expand="xs">
@@ -38,11 +38,12 @@ export default function App({ counterCart, setCounterCart }) {
       </LinkContainer>
 
       <Nav className="loginAndCartContainer">
-        <p className="userName">Hello {user ? user.firstName : ""}</p>
-
-        <NavLink>
-          <Login />
-        </NavLink>
+      <p className="userName"> {loggedInFirstName ? `Hello ${loggedInFirstName}`  : ""}</p>
+        {/* <LinkContainer to="/login">
+          <NavLink> */}
+            <Login />
+          {/* </NavLink>
+        </LinkContainer> */}
 
         <LinkContainer to="/cart">
           <NavLink>

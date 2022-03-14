@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./products.scss";
-import plants from "../../plants.js";
 import { NavLink } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,6 +16,7 @@ export default function Products({
   setCart,
   counterCart,
   setCounterCart,
+  buttonDisabled
 }) {
   const [search, setSearch, allProducts, setAllProducts] =
     useContext(searchContext);
@@ -85,6 +85,8 @@ export default function Products({
                     <Button
                       onClick={() => handleShopping(plant)}
                       variant="success"
+                      disabled={disabled}
+                      active={!disabled}
                     >
                       <FontAwesomeIcon icon={faPlus} className="icon-plus" />
                       Quick Add
