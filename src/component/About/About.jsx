@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./about.scss";
 
+//Some text about us
 export default function About() {
   return (
     <section className="About default-height ">
