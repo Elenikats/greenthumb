@@ -1,13 +1,18 @@
 .Cart {
+
     padding: 3rem 1rem;
 
     h1 {
         color: rgb(116, 197, 170);
     }
+
     .emptyCart {
         font-size: 2rem;
         margin: 6rem;
     }
+
+
+
 
     .cartItemsTable {
 
@@ -15,9 +20,28 @@
         box-shadow: rgba(39, 90, 19, 0.35) 0px 5px 15px;
         border-radius: 0.25rem;
 
+        .left-item-container {
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+
+
+
+        }
+
+        .right-item-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+
+
+        }
+
         td {
             div {
-                margin-top: 1.5rem;
+                // margin-top: 1.5rem;
+                padding: 1rem
             }
         }
 
@@ -25,26 +49,26 @@
         .removeBtn {
             border: none;
             background-color: white;
-
             padding-left: 0.5rem;
 
             &:hover {
                 color: rgb(155, 22, 22);
             }
-        
-            .count {
-                color: green;
-                background-color: white;
-                border: none;
-                font-size: 1.3rem;
-                padding: 0.2rem;
-            }
-        
-        
+        }
+
+        .product-price {
+            width: 4.5rem;
         }
 
         .quantityContainer {
-            width: 6rem;
+            div {
+
+                display: inline;
+            }
+
+            // width: 3rem;
+
+
 
             .quantity {
                 font-weight: bold;
@@ -56,7 +80,6 @@
                 margin-top: 0;
                 color: green;
                 background-color: white;
-                // border: none;
                 font-size: 1.3rem;
                 padding-left: 0.5rem;
                 padding-right: 0.5rem;
@@ -65,8 +88,12 @@
             }
         }
 
+
+
+
+
         .subtotal-item {
-            width: 4rem;
+            width: 5.5rem;
         }
 
 
@@ -83,6 +110,7 @@
     }
 
     .submit-button {
+        margin-top: 1rem;
         margin-right: 1rem;
     }
 
@@ -95,6 +123,20 @@
         }
     }
 
+    .discountContainer {
+        display: flex;
+
+        .inputDiscount {
+            width: 11rem;
+            height: 2.4rem;
+            padding-left: 0.5rem;
+        }
+
+        .discountBtn {
+
+            margin-left: 0.5rem
+        }
+    }
 }
 
 .CartOverlay {
@@ -110,5 +152,3 @@
         margin: 1rem;
     }
 }
-
-
