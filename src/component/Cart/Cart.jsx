@@ -1,8 +1,7 @@
 import "./cart.scss";
-import { useState, useContext, useEffect, useRef } from "react";
+import { useState, useContext, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { userContext } from "../../contexts/userContext.jsx";
-import { cartContext } from "../../contexts/cartContext.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import Table from "react-bootstrap/Table";
@@ -82,8 +81,7 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
               <tbody>
                 {cart.map((product) => {
                   return (
-                    <Row>
-                      {/* <tr key={product.id}> */}
+                    <Row key={product.id}>
                       <Col className="left-item-container" sm={6}>
                         <td>
                           <div>
@@ -136,7 +134,6 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
                           </div>
                         </td>
                       </Col>
-                      {/* </tr> */}
                     </Row>
                   );
                 })}
