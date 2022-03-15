@@ -45,8 +45,6 @@ export default function Login() {
 
     console.log(checkLogin);
     if (checkLogin) {
-      // console.log("email exist");
-      // close login box
       setShow(false);
       setAlert(false);
       setLogin(true);
@@ -56,7 +54,6 @@ export default function Login() {
         navigate("/cart");
       }
     } else {
-      // console.log("email doesn't exist ");
       setAlert(true);
     }
   }
@@ -124,8 +121,6 @@ export default function Login() {
               Log in
             </Button>
           )}
-
-          {/* <NavLink to="register"> */}
 
           <LinkContainer to="/register">
             <NavLink>

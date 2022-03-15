@@ -43,24 +43,5 @@ export default function MainContent() {
         </Col>
       </Row>
     </div>
-
-    // <div className="MainContent">
-    //   <Row className="mainRow-1">
-    //     <Col md={6} className="mainCol-1">
-    //       <h2>Why shop with us?</h2>
-    //       <p>
-    //         We are three passionate web-developers who just happen to love
-    //         houseplants and nature.
-    //       </p>
-    //       <p>
-    //         We created this website with React.js for our SPA final project
-    //         during our studies in Digital Career Institute.
-    //       </p>
-    //     </Col>
-    //     <Col md={6} className="mainCol-1">
-    //       <img className="tropicalWallpaperImg" src={pinkWall} />
-    //     </Col>
-    //   </Row>
-    // </div>
   );
 }

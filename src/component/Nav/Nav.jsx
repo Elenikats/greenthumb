@@ -1,17 +1,12 @@
-import { Nav, Navbar, NavLink, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar, NavLink } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faShoppingBasket,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../assets/Logo_250px.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import "./nav.scss";
 import { useContext } from "react";
 import { userContext } from "../../contexts/userContext.jsx";
 import Login from "../LoginLogout/Login.jsx";
-import Register from "../LoginLogout/Register";
 import Search from "../Search/Search.jsx";
 import { searchContext } from "../../contexts/searchContext";
 import { useNavigate } from "react-router-dom";
@@ -88,7 +83,7 @@ export default function NavigationBar({ counterCart, setCounterCart }) {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <LinkContainer to="/home">
+          <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
           <LinkContainer to="/about">
@@ -105,18 +100,6 @@ export default function NavigationBar({ counterCart, setCounterCart }) {
           <LinkContainer to="/plantdoctor">
             <Nav.Link>Plant-doctor</Nav.Link>
           </LinkContainer>
-
-          {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

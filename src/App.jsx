@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import Nav from "./component/Nav/Nav.jsx";
 import Register from "./component/LoginLogout/Register.jsx";
-
 import About from "./component/About/About.jsx";
 import Products from "./component/Products/Products.jsx";
 import ProductItem from "./component/ProductItem/ProductItem.jsx";
@@ -25,7 +24,6 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/home" element={<Main />} />
         <Route path="/about" element={<About />} />
         <Route path="products">
           <Route

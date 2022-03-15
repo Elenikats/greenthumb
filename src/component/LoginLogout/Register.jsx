@@ -5,7 +5,6 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import "./register.scss";
 import { userContext } from "../../contexts/userContext";
-import CloseButton from "react-bootstrap/CloseButton";
 import { useNavigate } from "react-router-dom";
 
 function Register(props) {
@@ -69,7 +68,6 @@ function Register(props) {
       <Form onSubmit={handleSubmit} className="registerForm">
         <h1>Registration</h1>
         <a href="/">Home</a>
-        {/* <CloseButton aria-label="Hide" onClick={handleClose} /> */}
 
         <Row className="mb-3" xs={1} md={2}>
           <Form.Group as={Col} controlId="formGridFirstName">
