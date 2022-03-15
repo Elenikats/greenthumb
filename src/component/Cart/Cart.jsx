@@ -1,5 +1,5 @@
 import "./cart.scss";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { userContext } from "../../contexts/userContext.jsx";
 import { cartContext } from "../../contexts/cartContext.jsx";
@@ -21,9 +21,12 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
   const [cartItem, setCartItem] = useState({});
 
   //Pricing
+  const [discount, setDiscount] = useState(0);
+  const discountCode = useRef();
   const itemsPrice = cart.reduce((a, c) => a + c.price * c.quantity, 0);
-  const shippingCosts = itemsPrice < 40 ? "7.50 €" : "free";
-  const totalPrice = itemsPrice < 40 ? itemsPrice + 7.5 : itemsPrice;
+  const shippingCosts = itemsPrice < 50 ? "7.50 €" : "free";
+  const totalPrice =
+    itemsPrice < 50 ? itemsPrice + 7.5 - discount : itemsPrice - discount;
 
   //User details
   const [user, setUser, users, setUsers] = useContext(userContext);
@@ -55,6 +58,14 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
     setCounterCart(counterCart + 1);
   }
 
+  //handleDiscount
+  function handleDiscount() {
+    console.log(discountCode);
+    if (discountCode.current.value == "plant5") {
+      setDiscount(5);
+    }
+  }
+
   if (!shoppingCompleted) {
     return (
       <Container fluid="lg" className="default-height Cart">
@@ -67,60 +78,66 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
                 Cart is empty
               </div>
             )}
-            <Table className="cartItemsTable">
+            <Table className="cartItemsTable left-table">
               <tbody>
                 {cart.map((product) => {
                   return (
-                    <tr key={product.id}>
-                      <td>
-                        <div>
-                          <button
-                            className="removeBtn"
-                            onClick={() => handleRemoveItem(product)}
-                          >
-                            <FontAwesomeIcon
-                              icon={faTrashCan}
-                              className="icon icon1"
-                            />
-                          </button>
-                        </div>
-                      </td>
-                      <td>
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          style={{ width: "4rem" }}
-                        />
-                      </td>
-                      <td>
-                        <div>{product.name}</div>
-                      </td>
-                      <td>
-                        <div>{product.price} €</div>
-                      </td>
-                      <td>
-                        <div className="quantityContainer">
-                          <span
-                            className="quantity count"
-                            onClick={() => decreaseQuantity(product)}
-                          >
-                            -
-                          </span>
-                          <span className="quantity">{product.quantity}</span>
-                          <span
-                            className="quantity count"
-                            onClick={() => increaseQuantity(product)}
-                          >
-                            +
-                          </span>
-                        </div>
-                      </td>
-                      <td>
-                        <div className="subtotal-item">
-                          {product.price * product.quantity} €
-                        </div>
-                      </td>
-                    </tr>
+                    <Row>
+                      {/* <tr key={product.id}> */}
+                      <Col className="left-item-container" sm={6}>
+                        <td>
+                          <div>
+                            <button
+                              className="removeBtn"
+                              onClick={() => handleRemoveItem(product)}
+                            >
+                              <FontAwesomeIcon
+                                icon={faTrashCan}
+                                className="icon icon1"
+                              />
+                            </button>
+                          </div>
+                        </td>
+                        <td>
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            style={{ width: "4rem" }}
+                          />
+                        </td>
+                        <td>
+                          <div>{product.name}</div>
+                        </td>
+                      </Col>
+                      <Col className="right-item-container" sm={6}>
+                        <td>
+                          <div className="product-price">{product.price} €</div>
+                        </td>
+                        <td>
+                          <div className="quantityContainer">
+                            <div
+                              className="quantity count"
+                              onClick={() => decreaseQuantity(product)}
+                            >
+                              -
+                            </div>
+                            <div className="quantity">{product.quantity}</div>
+                            <div
+                              className="quantity count"
+                              onClick={() => increaseQuantity(product)}
+                            >
+                              +
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div className="subtotal-item">
+                            {product.price * product.quantity} €
+                          </div>
+                        </td>
+                      </Col>
+                      {/* </tr> */}
+                    </Row>
                   );
                 })}
               </tbody>
@@ -130,7 +147,7 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
           {/* Right side table */}
           {cart.length !== 0 && (
             <Col md={4}>
-              <Table className="cartItemsTable">
+              <Table className="cartItemsTable right-table">
                 <tbody className="summary">
                   <tr>
                     <th>subtotal:</th>
@@ -140,6 +157,14 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
                     <th>shipping:</th>
                     <td>{shippingCosts}</td>
                   </tr>
+                  {discount ? (
+                    <tr>
+                      <th>discount:</th>
+                      <td>-5.00€</td>
+                    </tr>
+                  ) : (
+                    ""
+                  )}
                   <tr>
                     <th>TOTAL (incl. tax):</th>
                     <td>{totalPrice.toFixed(2)} €</td>
@@ -158,7 +183,17 @@ export default function Cart({ cart, setCart, counterCart, setCounterCart }) {
                   {user.zip} {user.city}
                 </p>
               </div>
-
+              <div className="discountContainer">
+                <input
+                  className="inputDiscount"
+                  ref={discountCode}
+                  type="text"
+                  placeholder="discount code"
+                ></input>
+                <Button className="discountBtn" onClick={handleDiscount}>
+                  ok
+                </Button>
+              </div>
               <Button
                 variant="success"
                 className="submit-button"
