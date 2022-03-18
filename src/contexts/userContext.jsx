@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 
 export const userContext = React.createContext();
 
+// GET DATA
 const userLocal = localStorage.getItem("user");
 const defaultUser = !userLocal ? "" : JSON.parse(userLocal);
 
 const usersLocal = localStorage.getItem("users");
 const defaultUsers = usersLocal ? JSON.parse(usersLocal) : [];
 
-// GET DATA
 const loginLocal = localStorage.getItem("login");
 const defaultLogin = loginLocal ? JSON.parse(loginLocal) : false;
 
@@ -29,6 +29,7 @@ export default function UserContextProvider(props) {
     defaultLoggedInFirstName
   );
 
+  // this stores the login to Local Storage in JSON format. The useEffect will update when [.. ] changes. WE SEND DATA
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
   }, [user]);
@@ -37,7 +38,6 @@ export default function UserContextProvider(props) {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
 
-  // this stores the login to Local Storage in JSON format. The useEffect will update when [login] changes. WE SEND DATA
   useEffect(() => {
     localStorage.setItem("login", JSON.stringify(login));
   }, [login]);

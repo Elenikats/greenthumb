@@ -8,11 +8,6 @@ export default function SearchContextProvider(props) {
     const [search, setSearch] = useState("");
     const [allProducts, setAllProducts] = useState(plants);
 
-    // it takes the search value input and filters the items that don't include it.
-
-    // console.log(search);
-
-
   const value = [search, setSearch, allProducts, setAllProducts ];
 
   return (

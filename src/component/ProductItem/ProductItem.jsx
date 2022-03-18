@@ -51,12 +51,10 @@ export default function ProductItem({
           <Col md={6}>
             <h2>{plantObject.name}</h2>
             <p>
-              {" "}
               <b>{plantObject.price} € </b>
             </p>
             <p>{plantObject.description}</p>
             <p>
-              {" "}
               size: <i>{plantObject.size} </i>
             </p>
             <div className="btn-addtocart-container">
